@@ -19,7 +19,7 @@ function App() {
             <h2>Sobre Mim</h2>
             <div style={styles.twoColumnSection}>
               <div style={styles.column}>
-                <img src="C:\Users\milton.aguirre\codes\site-milton\src\Milton.jpg" alt="Description of Image" style={styles.image} />
+                <img src="C:\Users\milton.aguirre\codes\site-milton\src\Milton.jpg" alt="Description of sunset" style={styles.image} />
               </div>
               <div style={styles.column}>
                 <p>
