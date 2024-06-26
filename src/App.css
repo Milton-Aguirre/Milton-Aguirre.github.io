@@ -1,0 +1,26 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+header h1 {
+  margin: 0;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1em;
+}
+.portfolio div, .blog div, .material div {
+  flex: 30%;
+  background-color: #eee;
+  margin: 1%;
+  padding: 1em;
+}
+.icons a {
+  color: #444;
+  margin: 0 1em;
+  text-decoration: none;
+  font-size: 1.5em;
+}
