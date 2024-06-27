@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <div>
-      <header style={styles.header}>
+      <header className="header" style={styles.header}>
         <h1>Milton Aguirre</h1>
         <p>Formação em Matemática</p>
       </header>
@@ -28,7 +28,7 @@ function App() {
 
             <h2>Bolsas de Estudos</h2>
             <p>Os links a seguir são de processos seletivos para cursos de pós-graduação em matemática</p>
-            <p>**Próximamente tera links atualizados de editais de bolsas**</p>
+            <p>**Próximamente terá links atualizados de editais de bolsas**</p>
           </div>
 
           <div style={styles.rightColumn}>
@@ -72,7 +72,7 @@ function App() {
                     <h5>Universidad del Valle</h5>
                     <p>Álgebras de Frobenius</p>
                     <a href="/pdfs/disertação_mestrado.pdf" target="_blank" rel="noopener noreferrer">
-                      {/* <img src="/images/logo-PDF-1.png" alt="PDF" style={styles.iconPDF} /> */}
+                      {/* <img src={`${process.env.PUBLIC_URL}/images/logo-PDF-1.png`} alt="PDF" style={styles.iconPDF} /> */}
                     </a>
                   </div>
                   <div style={styles.project}>
@@ -156,11 +156,15 @@ const styles = {
     color: '#fff',
     padding: '1em 0',
     textAlign: 'center',
+    width: '200%',
+    boxSizing: 'border-box',
   },
   nav: {
     backgroundColor: '#444',
     color: '#fff',
     padding: '1em',
+    width: '200%',
+    boxSizing: 'border-box',
     display: 'flex',
     justifyContent: 'space-around',
   },
@@ -176,6 +180,8 @@ const styles = {
     backgroundColor: '#C70039',
     color: '#fff',
     padding: '1em',
+    width: '200%',
+    boxSizing: 'border-box',
     margin: '1em',
   },
   section: {
@@ -286,6 +292,8 @@ const styles = {
     color: '#fff',
     textAlign: 'center',
     padding: '1em 0',
+    width: '200%',
+    boxSizing: 'border-box',
   },
 };
 
