@@ -37,7 +37,7 @@ function App() {
               <h2 style={styles.sectionTitle}>Sobre Mim</h2>
               <div style={styles.nColumnSection}>
                 <div style={styles.imageColumn}>
-                  <img src="/images/Milton.jpeg" alt="Description of sunset" style={styles.image} />
+                  <img src={`${process.env.PUBLIC_URL}/images/Milton.jpeg`} alt="Description of sunset" style={styles.image} />
                 </div>
                 <div style={styles.textColumn}>
                   <p>
@@ -80,7 +80,7 @@ function App() {
                     <h5>Universidade Federal de Viçosa</h5>
                     <p>Alguns resultados da teoria de Rk -ações sobre variedades diferenciáveis</p>
                     <a href="/pdfs/disertação_mestrado.pdf" target="_blank" rel="noopener noreferrer">
-                      <img src="/images/logo-PDF-1.png" alt="PDF" style={styles.iconPDF} />
+                      <img src={`${process.env.PUBLIC_URL}/images/logo-PDF-1.png`} alt="PDF" style={styles.iconPDF} />
                     </a>
                   </div>
                   <div style={styles.project}>
@@ -131,13 +131,13 @@ function App() {
         <aside style={styles.sidebar}>
           <div style={styles.icons}>
             <a href="https://www.facebook.com/cofradia.academica.1" target="_blank" rel="noopener noreferrer">
-              <img src="/images/logo-facebook.jpg" alt="Facebook" style={styles.icon} />
+              <img src={`${process.env.PUBLIC_URL}/images/logo-facebook.jpg`} alt="Facebook" style={styles.icon} />
             </a>
             <a href="https://www.instagram.com/icmam_math_conference?igsh=eWx2M3FlYWxucTJ0" target="_blank" rel="noopener noreferrer">
-              <img src="/images/logo-instagram.png" alt="Instagram" style={styles.icon} />
+              <img src={`${process.env.PUBLIC_URL}/images/logo-instagram.png`} alt="Instagram" style={styles.icon} />
             </a>
             <a href="https://www.youtube.com/@conferenciainternacionalma6791" target="_blank" rel="noopener noreferrer">
-              <img src="/images/logo-youtube.jpg" alt="YouTube" style={styles.icon} />
+              <img src={`${process.env.PUBLIC_URL}/images/logo-youtube.jpg`} alt="YouTube" style={styles.icon} />
             </a>
           </div>
         </aside>
