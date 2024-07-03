@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
 
 function App() {
   return (
@@ -9,13 +10,13 @@ function App() {
         <p>Formação em Matemática</p>
       </header>
       <nav style={styles.nav}>
-        <a href="#coment">Calendario de Eventos</a>
+        <a href="#calendar">Calendário de Eventos</a>
         <a href="#links">Links</a>
         <a href="#portfolio">Portfólio</a>
         <a href="#material">Material</a>
       </nav>
-      <div style={styles.container}>
-        <div style={styles.main}>
+       <div>  {/*style={styles.container}> */}
+        <div> {/* style={styles.main}> */}
 
           {/* <div style={styles.leftColumn}>
 
@@ -31,13 +32,13 @@ function App() {
             <p>**Próximamente terá links atualizados de editais de bolsas**</p>
           </div> */}
 
-          <div>{/* c>*/}
+          <div>
 
             <section style={styles.section}>
-              <h2 style={styles.sectionTitle}>Sobre Mim</h2>
+              <h2 style={styles.sectionTitle}>Biografia</h2>
               <div style={styles.nColumnSection}>
                 <div style={styles.imageColumn}>
-                  <img src={`${process.env.PUBLIC_URL}/images/Milton.jpeg`} alt="Description of sunset" style={styles.image} />
+                  <img src={`${process.env.PUBLIC_URL}/images/Milton.jpeg`} alt="Personal 0" style={styles.image} />
                 </div>
                 <div style={styles.textColumn}>
                   <p>
@@ -54,18 +55,20 @@ function App() {
               </div>
             </section>
 
-            <section>
-              <div style={styles.leftColumnEvents}>
-                <h2 style={styles.sectionTitle}>Calendário de Eventos</h2>
-                  <p>A seguir encontrará uma lista de eventos matemáticos que serão realizados nos próximos meses.</p>
-                  <ul style={styles.iconsCalendar}>
-                    <li><a className="link" href="https://sites.google.com/view/icmam2024/home" target="_blank" rel="noopener noreferrer">Congreso ICMAM Latin América 2024</a></li>
-                    <li><a className="link" href="https://sites.google.com/view/isaac-icmam-conference-4-women/p%C3%A1gina-principal" target="_blank" rel="noopener noreferrer">ISAACS-ICMAM Conference for Women in Mathematics 2024</a></li>
-                  </ul>
-              </div>
-              <div style={styles.rightColumnEvents}>
-                <p>imagem</p>
-              </div>
+            <section id="calendar">
+              <h2 style={styles.sectionTitle}>Calendário de Eventos</h2>
+                <div style={styles.nColumnSection}>
+                  <div style={styles.leftColumnEvents}>
+                      <p>A seguir encontrará uma lista de eventos matemáticos que serão realizados nos próximos meses.</p>
+                      <ul style={styles.iconsCalendar}>
+                        <li><a className="link" href="https://sites.google.com/view/icmam2024/home" target="_blank" rel="noopener noreferrer">Congreso ICMAM Latin América 2024</a></li>
+                        <li><a className="link" href="https://sites.google.com/view/isaac-icmam-conference-4-women/p%C3%A1gina-principal" target="_blank" rel="noopener noreferrer">ISAACS-ICMAM Conference for Women in Mathematics 2024</a></li>
+                      </ul>
+                  </div>
+                  <div style={styles.rightColumnEvents}>
+                    <img src={`${process.env.PUBLIC_URL}/images/Milton.jpeg`} alt="Personal 1" style={styles.image} />
+                  </div>
+                </div>
             </section>
 
             <section id="links" style={styles.section}>
@@ -147,7 +150,7 @@ function App() {
                 </div>
             </section>
 
-            <div id="coment">
+            <section>
               <h2 style={styles.sectionTitle}>Comentários</h2>
               <form style={styles.form}>
                 <input type="text" placeholder="Seu nome" style={styles.input} />
@@ -155,22 +158,23 @@ function App() {
                 <textarea placeholder="Seu comentário" style={styles.textarea}></textarea>
                 <button type="submit" style={styles.button}>Enviar</button>
               </form>
-            </div>
+            </section>
+
           </div>
         </div>
 
         <aside style={styles.sidebar}>
-          <div style={styles.icons}>
-            <a href="https://www.facebook.com/cofradia.academica.1" target="_blank" rel="noopener noreferrer">
-              <img src={`${process.env.PUBLIC_URL}/images/logo-facebook.jpg`} alt="Facebook" style={styles.icon} />
-            </a>
-            <a href="https://www.instagram.com/icmam_math_conference?igsh=eWx2M3FlYWxucTJ0" target="_blank" rel="noopener noreferrer">
-              <img src={`${process.env.PUBLIC_URL}/images/logo-instagram.png`} alt="Instagram" style={styles.icon} />
-            </a>
-            <a href="https://www.youtube.com/@conferenciainternacionalma6791" target="_blank" rel="noopener noreferrer">
-              <img src={`${process.env.PUBLIC_URL}/images/logo-youtube.jpg`} alt="YouTube" style={styles.icon} />
-            </a>
-          </div>
+          <div style={styles.socialMedia}>
+              <a href="https://www.facebook.com/cofradia.academica.1" target="_blank" rel="noopener noreferrer">
+                <FaFacebook size={40} style={styles.socialIcon} />
+              </a>
+              <a href="https://www.instagram.com/icmam_math_conference?igsh=eWx2M3FlYWxucTJ0" target="_blank" rel="noopener noreferrer">
+                <FaInstagram size={40} style={styles.socialIcon} />
+              </a>
+              <a href="https://www.youtube.com/@conferenciainternacionalma6791" target="_blank" rel="noopener noreferrer">
+                <FaYoutube size={40} style={styles.socialIcon} />
+              </a>
+            </div>
         </aside>
 
       </div>
@@ -201,10 +205,12 @@ const styles = {
   },
   container: {
     padding: '20px',
+    width: '100%',
   },
   main: {
     display: 'flex',
     justifyContent: 'space-between',
+    width: '100%',
   },
   sidebar: {
     flex: '25%',
@@ -217,6 +223,7 @@ const styles = {
   },
   section: {
     marginBottom: '2em',
+    width: '100%',
   },
   sectionTitle: {
     backgroundColor: '#333', // Fundo negro
@@ -230,12 +237,6 @@ const styles = {
     alignItems: 'flex-start',
     width: '100%',
   },
-  // '@media (max-width: 600px)': { // Define estilos específicos para telas pequenas (celulares)
-  //   nColumnSection: {
-  //     flexDirection: 'column', // Muda a direção do flex para coluna
-  //     justifyContent: 'center', // Centraliza os itens na coluna
-  //   },
-  // },
   leftColumn: {
     //flex: '1', //Ocupa uma quarta parte da distribuição horizontal da coluna
     //marginRight: '10px',
@@ -339,6 +340,15 @@ const styles = {
     backgroundColor: '#444',
     color: '#fff',
     border: 'none',
+  },
+  socialMedia: {
+    display: 'flex',
+    justifyContent: 'center',
+    gap: '20px',
+    marginTop: '20px',
+  },
+  socialIcon: {
+    color: '#fff',
   },
   footer: {
     backgroundColor: '#333',
