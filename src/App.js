@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
+import Contact from './components/contacts';
 
 function App() {
   return (
@@ -150,7 +151,7 @@ function App() {
                 </div>
             </section>
 
-            <section>
+            {/* <section>
               <h2 style={styles.sectionTitle}>Comentários</h2>
               <form style={styles.form}>
                 <input type="text" placeholder="Seu nome" style={styles.input} />
@@ -158,6 +159,11 @@ function App() {
                 <textarea placeholder="Seu comentário" style={styles.textarea}></textarea>
                 <button type="submit" style={styles.button}>Enviar</button>
               </form>
+            </section> */}
+
+            <section>
+              <h2 style={styles.sectionTitle}>Comentários</h2>
+                <Contact/>
             </section>
 
           </div>
