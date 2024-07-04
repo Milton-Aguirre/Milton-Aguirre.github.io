@@ -260,7 +260,7 @@ const styles = {
     borderRadius: '5px',
   },
   rightColumnEvents: {
-    // justifyContent: 'center',
+    justifyContent: 'center',
     flex: '1', //Ocupa três quartas partes da distribuição horizontal da coluna
     marginRight: '10px',
     marginLeft: '10px',
