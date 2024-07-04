@@ -66,7 +66,7 @@ function App() {
                       </ul>
                   </div>
                   <div style={styles.rightColumnEvents}>
-                    <img src={`${process.env.PUBLIC_URL}/images/Milton.jpeg`} alt="Personal 1" style={styles.image} />
+                    <img src={`${process.env.PUBLIC_URL}/images/KleinBottle.png`} alt="Garrafa de Klein" style={styles.imageBottle} />
                   </div>
                 </div>
             </section>
@@ -257,20 +257,23 @@ const styles = {
     marginRight: '10px',
     backgroundColor: '#7B8DA3', // Opcional: fundo cinza para a coluna da esquerda
     padding: '10px',
+    borderRadius: '5px',
   },
   rightColumnEvents: {
+    // justifyContent: 'center',
     flex: '1', //Ocupa três quartas partes da distribuição horizontal da coluna
     marginRight: '10px',
     marginLeft: '10px',
     backgroundColor: '#f0f0f0', // Opcional: fundo cinza muito claro para a coluna da direita
     padding: '10px',
+    margin: '0 10px',
   },
   column: {
     flex: '1',
     margin: '0 10px',
   },
   imageColumn: {
-    display: '1', 
+    // display: '1', 
     justifyContent: 'center',
     flex: '1', //Ocupa uma quarta parte da distribuição horizontal da coluna
     marginRight: '10px',
@@ -295,6 +298,12 @@ const styles = {
     maxWidth: '200px', // Define a largura máxima da imagem
     height: 'auto', // Mantém a proporção da imagem
     border: '2px solid black', // Adiciona uma borda preta de 2px
+  },
+  imageBottle: {
+    display: 'flex',
+    width: '100%', // Ajusta a largura da imagem
+    maxWidth: '100px', // Define a largura máxima da imagem
+    height: 'auto', // Mantém a proporção da imagem
   },
   iconsCalendar: {
     display: 'flex',
