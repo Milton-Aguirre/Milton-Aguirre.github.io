@@ -11,7 +11,7 @@ function App() {
         <p>Formação em Matemática</p>
       </header>
       <nav style={styles.nav}>
-        <a href="#calendar">Calendário de Eventos</a>
+        <a href="#calendar">Eventos</a>
         <a href="#links">Links</a>
         <a href="#portfolio">Portfólio</a>
         <a href="#material">Material</a>
@@ -57,7 +57,7 @@ function App() {
             </section>
 
             <section id="calendar">
-              <h2 style={styles.sectionTitle}>Calendário de Eventos</h2>
+              <h2 style={styles.sectionTitle}>Eventos</h2>
                 <div style={styles.nColumnSection}>
                   <div style={styles.leftColumnEvents}>
                       <p>A seguir encontrará uma lista de eventos matemáticos que serão realizados nos próximos meses.</p>
@@ -117,15 +117,15 @@ function App() {
                 <div>
                   <div style={styles.nColumnSection}>
                     <div style={styles.project}>
-                      <h3>Cálculo 1</h3>
+                      <h3>Sistemas Dinâmicos</h3>
                       <p>Proximamente PDF com exercicios resolvidos</p>
                     </div>
                     <div style={styles.project}>
-                      <h3>Cálculo 2</h3>
+                      <h3>Teoria de Galois</h3>
                       <p>Proximamente PDF com exercicios resolvidos</p>
                     </div>
                     <div style={styles.project}>
-                      <h3>Cálculo 3</h3>
+                      <h3>Formas Diferenciais</h3>
                       <p>Proximamente PDF com exercicios resolvidos</p>
                     </div>
                   </div>
@@ -136,7 +136,7 @@ function App() {
                 <div>
                   <div style={styles.nColumnSection}>
                     <div style={styles.project}>
-                      <h3>Álgebra Linear</h3>
+                      <h3>Geometría Riemanniana</h3>
                       <p>Proximamente PDF com exercicios resolvidos</p>
                     </div>
                     <div style={styles.project}>
@@ -169,14 +169,21 @@ function App() {
             <section>
               <h2 style={styles.sectionTitle}>Visitantes</h2>
               {/* <div style={styles.imgContainer}> */}
-              <a href="https://info.flagcounter.com/MBYF">
+              <a href="https://info.flagcounter.com/vHkJ">
                 <img 
-                  src="https://s01.flagcounter.com/countxl/MBYF/bg_FFFFFF/txt_000000/border_000000/columns_4/maxflags_8/viewers_3/labels_0/pageviews_0/flags_0/percent_1/" 
+                  src="https://s01.flagcounter.com/countxl/vHkJ/bg_FFFFFF/txt_000000/border_000000/columns_4/maxflags_12/viewers_3/labels_0/pageviews_0/flags_0/percent_1/" 
                   alt="Flag Counter" 
                   border="0"
                   style={styles.imgStyle}
                 />
               </a>
+              {/* <a href="https://info.flagcounter.com/MBYF">
+                <img 
+                  src="https://s01.flagcounter.com/countxl/MBYF/bg_FFFFFF/txt_000000/border_000000/columns_4/maxflags_8/viewers_3/labels_0/pageviews_0/flags_0/percent_1/" 
+                  alt="Flag Counter" 
+                  border="0"
+                />
+              </a> */}
               {/* </div> */}
             </section>
           </div>
