@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
+import Contact from './components/contacts';
 
 function App() {
   return (
@@ -38,7 +39,7 @@ function App() {
               <h2 style={styles.sectionTitle}>Biografia</h2>
               <div style={styles.nColumnSection}>
                 <div style={styles.imageColumn}>
-                  <img src={`${process.env.PUBLIC_URL}/images/Milton.jpeg`} alt="Personal 0" style={styles.image} />
+                  <img src={`${process.env.PUBLIC_URL}/images/Milton.jpeg`} alt="Personal Photo" style={styles.image} />
                 </div>
                 <div style={styles.textColumn}>
                   <p>
@@ -66,7 +67,7 @@ function App() {
                       </ul>
                   </div>
                   <div style={styles.rightColumnEvents}>
-                    <img src={`${process.env.PUBLIC_URL}/images/KleinBottle.png`} alt="Garrafa de Klein" style={styles.imageBottle} />
+                    <img src={`${process.env.PUBLIC_URL}/images/KleinBottle.png`} alt="Klein bottle" style={styles.imageBottle} />
                   </div>
                 </div>
             </section>
@@ -88,8 +89,8 @@ function App() {
                     <h3>TCC Bacharel</h3>
                     <h5>Universidad del Valle</h5>
                     <p>Álgebras de Frobenius</p>
-                    <a href="/pdfs/disertação_mestrado.pdf" target="_blank" rel="noopener noreferrer">
-                      {/* <img src={`${process.env.PUBLIC_URL}/images/logo-PDF-1.png`} alt="PDF" style={styles.iconPDF} /> */}
+                    <a href="/pdfs/projeto_de_grado.pdf" target="_blank" rel="noopener noreferrer">
+                      <img src={`${process.env.PUBLIC_URL}/images/logo-PDF-1.png`} alt="PDF" style={styles.iconPDF} />
                     </a>
                   </div>
                   <div style={styles.project}>
@@ -150,7 +151,7 @@ function App() {
                 </div>
             </section>
 
-            <section>
+            {/* <section>
               <h2 style={styles.sectionTitle}>Comentários</h2>
               <form style={styles.form}>
                 <input type="text" placeholder="Seu nome" style={styles.input} />
@@ -158,8 +159,26 @@ function App() {
                 <textarea placeholder="Seu comentário" style={styles.textarea}></textarea>
                 <button type="submit" style={styles.button}>Enviar</button>
               </form>
+            </section> */}
+
+            <section>
+              <h2 style={styles.sectionTitle}>Comentários</h2>
+                <Contact/>
             </section>
 
+            <section>
+              <h2 style={styles.sectionTitle}>Visitantes</h2>
+              {/* <div style={styles.imgContainer}> */}
+              <a href="https://info.flagcounter.com/MBYF">
+                <img 
+                  src="https://s01.flagcounter.com/countxl/MBYF/bg_FFFFFF/txt_000000/border_000000/columns_4/maxflags_8/viewers_3/labels_0/pageviews_0/flags_0/percent_1/" 
+                  alt="Flag Counter" 
+                  border="0"
+                  style={styles.imgStyle}
+                />
+              </a>
+              {/* </div> */}
+            </section>
           </div>
         </div>
 
@@ -349,6 +368,18 @@ const styles = {
     backgroundColor: '#444',
     color: '#fff',
     border: 'none',
+  },
+  imgContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    // Certifique-se de que a altura do contêiner seja suficiente para centralizar verticalmente, se necessário
+    height: '100%', 
+  },
+  imgStyle: {
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
   socialMedia: {
     display: 'flex',

@@ -25,14 +25,6 @@ nav a {
   font-size: 1.5em;
 }
 
-/* @media (max-width: 600px) {
-  .header {
-    width: 100%;
-    padding: 1em 0;
-    box-sizing: border-box;
-  }
-} */
-
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -54,3 +46,66 @@ nav a {
     align-items: center;
   }
 }
+/* ################################################################################## */
+/* O codigo embaixo é para mexer no formato de comentarios */
+
+.form_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+input {
+  width: 30vw;
+  min-width: 12rem;
+  height: 50px;
+  margin: 10px auto;
+  padding: 20px;
+  border: none;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: inset 9px 9px 19px #d9d9d9, inset -9px -9px 19px
+              #ffffff;
+}
+label {
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+*:focus {
+  outline: none;
+  box-shadow: 0 5px 10px rgba(170, 0, 255, 0.2);
+}
+button {
+  width: 8rem;
+  margin-top: 2rem;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  border-radius: 7px;
+  background: linear-gradient(145deg, #2798da, #274beb);
+  box-shadow: 9px 9px 19px #0a0a0a, -9px -9px 19px #f0ffff;
+}
+button:hover {
+  background: linear-gradient(145deg, #bce6d2, #e0fff9);
+  box-shadow: 9px 9px 19px #b2d9c6, -9px -9px 19px #f0ffff;
+}
+/* textarea {
+  min-width: 30vw;
+  margin: 10px auto;
+  padding: 20px;
+  border: none;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: inset 9px 9px 19px #d9d9d9, inset -9px -9px 19px
+              #ffffff;
+} */
+
+/* ################################################################################## */
