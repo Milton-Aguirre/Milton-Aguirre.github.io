@@ -257,12 +257,13 @@ nav a {
   margin-top: 20px;
 }
 
-.socialIcon {
+.socialIcon { /* controla a cor dos icones de redes sociais */
   color: #fff;
 }
 
-.bamdeiras {
+.bamdeiras { /* controla o posicionamento da caixa de bamdeiras de visitantes */
   text-align: center;
+  margin-top: 1rem;
 }
 
 .footer {
@@ -276,7 +277,7 @@ nav a {
 
 /* ################################################################################## */
 /* O codigo embaixo é para mexer no formato de comentarios */
-.form_wrapper { /* controla o posisonamento dos elementos dentro de section */
+.form_wrapper { /* controla o posisionamento dos elementos dentro de section */
   display: flex;
   justify-content: center;
   align-items: center;

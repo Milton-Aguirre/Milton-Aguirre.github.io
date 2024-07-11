@@ -92,7 +92,7 @@ function App() {
                   <h5>Univesp</h5>
                   <p>Descrição do projeto 3...</p>
                   <a href="/pdfs/disertação_mestrado.pdf" target="_blank" rel="noopener noreferrer">
-                    <img src={`${process.env.PUBLIC_URL}/images/logo-PDF-1.png`} alt="PDF" className="iconPDF" />
+                    {/* <img src={`${process.env.PUBLIC_URL}/images/logo-PDF-1.png`} alt="PDF" className="iconPDF" /> */}
                   </a>
                 </div>
               </div>
@@ -144,28 +144,6 @@ function App() {
 
 export default App;
 
-// import React from 'react';
-// import './App.css';
-// import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
-// import Contact from './components/contacts';
-
-// function App() {
-//   return (
-//     <div>
-//       <header className="header" style={styles.header}>
-//         <h1>Milton Aguirre</h1>
-//         <p>Formação em Matemática</p>
-//       </header>
-//       <nav style={styles.nav}>
-//         <a href="#calendar">Eventos</a>
-//         <a href="#links">Links</a>
-//         <a href="#portfolio">Portfólio</a>
-//         <a href="#material">Material</a>
-//       </nav>
-//        <div>  {/*style={styles.container}> */}
-//         <div> {/* style={styles.main}> */}
-
-//           {/* <div style={styles.leftColumn}>
 
 //             <h2>Calendário de Eventos</h2>
 //             <p>A seguir encontrará uma lista de eventos matemáticos que serão realizados nos próximos meses.</p>
