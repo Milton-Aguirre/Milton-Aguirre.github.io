@@ -28,7 +28,7 @@ return (
         <label>Email</label>
         <input type="email" name="user_email" placeholder="exemplo@email.com"/>
         <label>Menssagem</label>
-        <textarea name="message" rows="5" placeholder="Entre em contato para discutir asuntos acadêmicos"/>
+        <textarea name="message" rows="5" placeholder="Entre em contato para discutir assuntos acadêmicos"/>
         <button type="submit" value="Submit"> Enviar </button>
       </form>
     </div>
