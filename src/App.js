@@ -90,9 +90,9 @@ function App() {
                 <div className="project">
                   <h3>TCC Especialização</h3>
                   <h5>Univesp</h5>
-                  <p>Descrição do projeto 3...</p>
-                  <a href="/pdfs/disertação_mestrado.pdf" target="_blank" rel="noopener noreferrer">
-                    {/* <img src={`${process.env.PUBLIC_URL}/images/logo-PDF-1.png`} alt="PDF" className="iconPDF" /> */}
+                  <p>Perfil dos alunos da Universidade Virtual do Estado de São Paulo em relação à inclusão digital, 2022</p>
+                  <a href="/pdfs/tcc_especialização.pdf" target="_blank" rel="noopener noreferrer">
+                    <img src={`${process.env.PUBLIC_URL}/images/logo-PDF-1.png`} alt="PDF" className="iconPDF" />
                   </a>
                 </div>
               </div>
