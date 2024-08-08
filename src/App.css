@@ -91,8 +91,6 @@ nav a {
   margin: 0em;
 }
 
-
-
 .section {
   margin-bottom: 2em;
   width: 100%;
@@ -105,11 +103,21 @@ nav a {
   border-radius: 5px;
 }
 
+.subSectionTitle {
+  background-color: #777777;
+  color: #ffffff;
+  margin: 10px 20px;
+  margin-bottom: 0.5em;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
 .nColumnSection {
   display: flex;
+  margin: 10px 20px;
   justify-content: space-between;
   align-items: flex-start;
-  width: 100%;
+  width: 95%;
 }
 
 .leftColumn {
@@ -124,6 +132,7 @@ nav a {
 
 .leftColumnEvents {
   flex: 3;
+  margin: 10px;
   margin-right: 10px;
   background-color: #7B8DA3;
   padding: 10px;
@@ -133,16 +142,16 @@ nav a {
 .rightColumnEvents {
   justify-content: center;
   flex: 1;
+  margin: 10px;
   margin-right: 10px;
   margin-left: 10px;
   background-color: #f0f0f0;
   padding: 10px;
-  margin: 0 10px;
 }
 
 .column {
   flex: 1;
-  margin: 0 10px;
+  margin: 10px;
 }
 
 .imageColumn {
@@ -151,12 +160,12 @@ nav a {
   align-items: center;
   /* height: 50vh; */
   flex: 1; /* Ocupa uma quarta parte da distribuição horizontal da coluna */
-  margin: 0 10px;
+  margin: 10px;
 }
 
 .textColumn {
   flex: 3; /* Ocupa três quartas partes da distribuição horizontal da coluna */
-  margin: 0 10px;
+  margin: 10px;
   background-color: #d3d3d3; /* Fundo cinza claro */
   padding: 10px; /* Espaçamento interno */
   border-radius: 5px; /* Bordas arredondadas (opcional) */
@@ -164,10 +173,14 @@ nav a {
 
 .project {
   flex: 1;
-  margin: 0 10px;
+  margin: 10px;
   padding: 5px;
   background-color: #d3d3d3;
   border-radius: 5px;
+}
+
+.project h4 {
+  margin-top: 10px; /* Ajustar o espaçamento do topo de h4 */
 }
 
 .image {
@@ -184,7 +197,7 @@ nav a {
   height: auto;
 }
 
-.iconsCalendar {
+.iconsEvents {
   display: flex;
   flex-direction: column;
   list-style-type: disc;
@@ -193,6 +206,7 @@ nav a {
 
 .icons {
   display: flex;
+  margin: 10px;
   justify-content: space-around;
   align-items: stretch;
 }
@@ -276,7 +290,7 @@ nav a {
 }
 
 /* ################################################################################## */
-/* O codigo embaixo é para mexer no formato de comentarios */
+/* O seguinte código é usado para estilizar a caixa de comentarios */
 .form_wrapper { /* controla o posisionamento dos elementos dentro de section */
   display: flex;
   justify-content: center;
