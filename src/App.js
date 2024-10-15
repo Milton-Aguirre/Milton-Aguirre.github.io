@@ -51,7 +51,7 @@ function App() {
                     <p>A seguir encontrará uma lista de eventos matemáticos que serão realizados nos próximos meses.</p>
                     <ul className="iconsEvents">
                       <li><a className="link" href="https://sites.google.com/view/icmam2024/home" target="_blank" rel="noopener noreferrer">Congreso ICMAM Latin América 2024</a></li>
-                      <li><a className="link" href="https://sites.google.com/view/isaac-icmam-conference-4-women/p%C3%A1gina-principal" target="_blank" rel="noopener noreferrer">ISAACS-ICMAM Conference for Women in Mathematics 2024</a></li>
+                      <li><a className="link" href="https://sites.google.com/view/isaac-icmam-conference-4-women/" target="_blank" rel="noopener noreferrer">ISAACS-ICMAM Conference for Women in Mathematics 2024</a></li>
                     </ul>
                   </div>
                   <div className="rightColumnEvents">
@@ -123,11 +123,11 @@ function App() {
               <a href="https://www.youtube.com/@conferenciainternacionalma6791" target="_blank" rel="noopener noreferrer">
                 <FaYoutube size={40} className="socialIcon" />
               </a>
-              <a href="https://github.com/Milton-Aguirre" target="_blank" rel="noopener noreferrer">
-                <FaGithub size={40} className="socialIcon" />
-              </a>
               <a href="https://www.linkedin.com/in/milton-aguirre-mat-52300751/" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin size={40} className="socialIcon" />
+              </a>              
+              <a href="https://github.com/Milton-Aguirre" target="_blank" rel="noopener noreferrer">
+                <FaGithub size={40} className="socialIcon" />
               </a>
             </div>
         </aside>
