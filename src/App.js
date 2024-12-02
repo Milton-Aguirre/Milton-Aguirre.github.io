@@ -48,7 +48,7 @@ function App() {
               <h2 className='subSectionTitle'>Próximos</h2>
                 <div className="nColumnSection">
                   <div className="leftColumnEvents">
-                    <p>A seguir encontrará uma lista de eventos matemáticos que serão realizados nos próximos meses.</p>
+                    <p>A seguir encontrará uma lista de eventos matemáticos que serão realizados próximamente.</p>
                     <ul className="iconsEvents">
                       <li><a className="link" href="" target="_blank" rel="noopener noreferrer">ISAACS Congress 2029</a></li>
                     </ul>
