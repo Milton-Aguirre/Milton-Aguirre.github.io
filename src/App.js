@@ -50,8 +50,7 @@ function App() {
                   <div className="leftColumnEvents">
                     <p>A seguir encontrará uma lista de eventos matemáticos que serão realizados nos próximos meses.</p>
                     <ul className="iconsEvents">
-                      <li><a className="link" href="https://sites.google.com/view/icmam2024/home" target="_blank" rel="noopener noreferrer">Congreso ICMAM Latin América 2024</a></li>
-                      <li><a className="link" href="https://sites.google.com/view/isaac-icmam-conference-4-women/" target="_blank" rel="noopener noreferrer">ISAACS-ICMAM Conference for Women in Mathematics 2024</a></li>
+                      <li><a className="link" href="" target="_blank" rel="noopener noreferrer">ISAACS Congress 2029</a></li>
                     </ul>
                   </div>
                   <div className="rightColumnEvents">
@@ -65,6 +64,8 @@ function App() {
                     <ul className="iconsEvents">
                       <li><a className="link" href="https://sites.google.com/view/math08conference" target="_blank" rel="noopener noreferrer">Congreso ICMAM Latin América 2020</a></li>
                       <li><a className="link" href="https://sites.google.com/view/matematicasunivalleicmam2022/home" target="_blank" rel="noopener noreferrer">Congreso ICMAM Latin América 2022</a></li>
+                      <li><a className="link" href="https://sites.google.com/view/icmam2024/home" target="_blank" rel="noopener noreferrer">Congreso ICMAM Latin América 2024</a></li>
+                      <li><a className="link" href="https://sites.google.com/view/isaac-icmam-conference-4-women/" target="_blank" rel="noopener noreferrer">ISAACS-ICMAM Conference for Women in Mathematics 2024</a></li>
                     </ul>
                   </div>
                   <div className="rightColumnEvents">
