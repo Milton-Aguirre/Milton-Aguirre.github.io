@@ -1,3 +1,4 @@
+/* Criar uma base visual limpa para toda a página. */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
@@ -5,31 +6,53 @@ body {
   padding: 0;
 }
 
+/* Evitar espaçamento indesejado acima/abaixo do título, alinhando-o de forma justa ao cabeçalho. */
 header h1 {
   margin: 0;
 }
 
+/* Criar uma barra de navegação no cabeçalho visualmente limpa e espaçada. */
 nav a {
   color: #fff;
   text-decoration: none;
   margin: 0 1em;
 }
 
-.portfolio div, .blog div, .material div {
+/* Criar cards responsivos em um layout flexível, com espaçamento consistente. */
+/* .portfolio div, .blog div, .material div {
   flex: 30%;
-  background-color: #eee;
+  background-color: #12eb36;
   margin: 1%;
   padding: 1em;
+} */
+.blog, .material {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  background-color: #ffffff;
 }
 
+
+/* Criar ícones de redes sociais ou contato com destaque visual. */
 .icons a {
-  color: #444;
+  color: #1044EE;
   margin: 0 1em;
   text-decoration: none;
   font-size: 1.5em;
 }
 
+/* ################################################################################## */
+/* Esse trecho define um Media Query, que ajusta o layout quando a tela for menor que 768px (tamanho típico de tablets e celulares) */
 @media (max-width: 768px) {
+  .header {
+    background-color: #c21717;
+    color: #050505;
+    padding: 1em 0;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
   .container {
     flex-direction: column;
   }
@@ -50,10 +73,11 @@ nav a {
     align-items: center;
   }
 }
+/* ################################################################################## */
 
 .header {
-  background-color: #C70039;
-  color: #fff;
+  background-color: #c21717;
+  color: #fcfcfc;
   padding: 1em 0;
   text-align: center;
   width: 100%;
@@ -61,8 +85,8 @@ nav a {
 }
 
 .nav {
-  background-color: #444;
-  color: #fff;
+  background-color: #486a6e;
+  color: #0e0d0d;
   padding: 1em;
   width: 100%;
   box-sizing: border-box;
@@ -71,9 +95,27 @@ nav a {
 }
 
 .container {
-  padding: 20px;
-  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
 }
+
+/* Para manter caixas alinhadas por linha */
+.card {
+  background-color: #c4c2c3; /* Cinza claro */
+  padding: 16px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+  min-height: 220px; /* Altura mínima para manter padrão */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  margin: 2em;
+}
+
+
 
 .main {
   display: flex;
@@ -97,14 +139,14 @@ nav a {
 }
 
 .sectionTitle {
-  background-color: #333;
-  color: #ffffff;
+  background-color: #be6f44;
+  color: #080808;
   padding: 5px 10px;
   border-radius: 5px;
 }
 
 .subSectionTitle {
-  background-color: #777777;
+  background-color: #c49249;
   color: #ffffff;
   margin: 10px 20px;
   margin-bottom: 0.5em;
@@ -134,7 +176,7 @@ nav a {
   flex: 3;
   margin: 10px;
   margin-right: 10px;
-  background-color: #7B8DA3;
+  background-color: #cacaca;
   padding: 10px;
   border-radius: 5px;
 }
@@ -244,12 +286,23 @@ nav a {
   font-size: 1em;
 }
 
-.button {
-  padding: 0.5em;
-  background-color: #444;
-  color: #fff;
+.buttonPDF {
+  width: 100%; /* Ocupa toda a largura do card */
+  padding: 10px; /* Espaçamento interno confortável */
+  background: #f39315;
+  color: #b503fc;
   border: none;
+  border-radius: 5px; /* Bordas arredondadas */
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2); /* Sombra leve */
+  transition: background 0.3s ease-in-out;
 }
+
+.buttonPDF:hover {
+  background: #bb81e7; /* Cor mais escura ao passar o mouse */
+}
+
 
 .imgContainer {
   display: flex;
@@ -288,6 +341,40 @@ nav a {
   width: 100%;
   box-sizing: border-box;
 }
+
+/* ################################################################################## */
+/* O seguinte código é usado para estilizar a janela flutuante de visualização de PDFs */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(95, 112, 131, 0.5); /* Fundo escurecido */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
 
 /* ################################################################################## */
 /* O seguinte código é usado para estilizar a caixa de comentarios */
@@ -332,13 +419,13 @@ button { /* controla o estilo e as propiedades do botão */
   background: transparent;
   border: none;
   border-radius: 7px;
-  background: linear-gradient(145deg, #60b8eb, #9bc5ad);
+  background: linear-gradient(145deg, #a1764d, #f5ae14);
   box-shadow: 9px 9px 19px #888686, -9px -9px 19px #f0ffff;
 }
-/* button:hover {
-  background: linear-gradient(145deg, #bce6d2, #e0fff9);
-  box-shadow: 9px 9px 19px #b2d9c6, -9px -9px 19px #f0ffff;
-} */
+button:hover { /* Cor mais clara ao passar o mouse */
+  background: linear-gradient(145deg, #707ead, #3f42f5);
+  box-shadow: 9px 9px 19px #d63fa9, -9px -9px 19px #ca99c8;
+}
 textarea { /* controla o estilo da caixa da Menssagem */
   min-width: 60vw;
   margin: 10px auto;

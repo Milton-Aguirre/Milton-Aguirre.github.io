@@ -98,6 +98,9 @@ function App() {
             </section>
             <section>
               <h2 className="sectionTitle">Visitantes</h2>
+              <h5 style={{ textAlign: "center", marginTop: "20px", fontSize: "1.5rem", fontWeight: "bold", color: "#333" }}>
+                Agradeço com grande carinho as visitas neste site das diferentes pessoas do mundo
+              </h5>
               <div className="bamdeiras">
                <a href="https://info.flagcounter.com/vHkJ">
                  <img 
