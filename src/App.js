@@ -9,8 +9,13 @@ function App() {
   return (
     <div className="App">
       <header className="header">
-        <h1>Milton Aguirre</h1>
-        <p>Formação em Matemática</p>
+        <div className="header-content">
+          <img src={`${process.env.PUBLIC_URL}/Logo_site_192.png`} alt="Logo" className="logo" />
+          <div>
+            <h1>Milton Aguirre</h1>
+            <p>Formação em Matemática</p>
+          </div>
+        </div>
       </header>
       <nav className="nav">
         <a href="#events">Eventos</a>
@@ -54,7 +59,7 @@ function App() {
                     </ul>
                   </div>
                   <div className="rightColumnEvents">
-                    <img src={`${process.env.PUBLIC_URL}/images/KleinBottle.png`} alt="Klein bottle" className="imageBottle" />
+                    <img src={`${process.env.PUBLIC_URL}/images/Logo_RP.png`} width="200" height="200" alt="Marca Pessoal" className="image-Logo_RP" />
                   </div>
                 </div>
               <h2 className='subSectionTitle'>Histórico</h2>
@@ -69,7 +74,7 @@ function App() {
                     </ul>
                   </div>
                   <div className="rightColumnEvents">
-                    <img src={`${process.env.PUBLIC_URL}/images/KleinBottle.png`} alt="Klein bottle" className="imageBottle" />
+                    <img src={`${process.env.PUBLIC_URL}/images/Logo_RP.png`} width="200" height="200" alt="Marca Pessoal" className="image-Logo_RP" />
                   </div>
                 </div>
             </section>

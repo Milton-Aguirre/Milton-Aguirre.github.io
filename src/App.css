@@ -44,13 +44,37 @@ nav a {
 /* ################################################################################## */
 /* Esse trecho define um Media Query, que ajusta o layout quando a tela for menor que 768px (tamanho típico de tablets e celulares) */
 @media (max-width: 768px) {
-  .header {
+  /* .header {
     background-color: #c21717;
     color: #050505;
     padding: 1em 0;
     text-align: center;
     width: 100%;
     box-sizing: border-box;
+  } */
+  .header {
+    background-color: #c21717;
+    color: #fcfcfc;
+    padding: 1em 0;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    /* flex-direction: column; Empilha os itens verticalmente */
+    align-items: center; /* Centraliza os itens */
+    text-align: center; /* Garante que o texto fique centralizado */
+  }
+
+  .header-content {
+    display: flex;
+    /* flex-direction: column; Faz o logo e o texto ficarem um abaixo do outro */
+    align-items: center; /* Centraliza os itens verticalmente */
+    text-align: center; /* Alinha o texto ao centro */
+  }
+
+  .logo {
+    width: 80px; /* Ajusta o tamanho do logo para telas pequenas */
+    height: auto;
+    margin-bottom: 10px; /* Adiciona espaçamento entre o logo e o texto */
   }
 
   .container {
@@ -75,14 +99,41 @@ nav a {
 }
 /* ################################################################################## */
 
-.header {
+/* .header {
   background-color: #c21717;
   color: #fcfcfc;
   padding: 1em 0;
   text-align: center;
   width: 100%;
   box-sizing: border-box;
+} */
+.header {
+  background-color: #c21717;
+  color: #fcfcfc;
+  padding: 1em;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center; /* Alinha os itens verticalmente */
+  justify-content: center; /* Mantém o conteúdo centralizado horizontalmente */
 }
+
+.header-content {
+  display: flex;
+  align-items: center; /* Centraliza logo e texto verticalmente */
+  text-align: left; /* Mantém o texto alinhado à esquerda */
+}
+
+.logo {
+  width: 50px; /* Ajuste conforme necessário */
+  height: auto;
+  margin-right: 15px; /* Espaço entre o logo e o texto */
+}
+
+
+
+
+
 
 .nav {
   background-color: #486a6e;
@@ -232,7 +283,7 @@ nav a {
   border: 2px solid black;
 }
 
-.imageBottle {
+.image-Logo_RP {
   display: flex;
   width: 100%;
   max-width: 100px;
