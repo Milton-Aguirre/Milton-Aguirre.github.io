@@ -59,7 +59,7 @@ function App() {
                     </ul>
                   </div>
                   <div className="rightColumnEvents">
-                    <img src={`${process.env.PUBLIC_URL}/images/Logo_RP.png`} width="200" height="200" alt="Marca Pessoal" className="image-Logo_RP" />
+                    <img src={`${process.env.PUBLIC_URL}/Logo_site_192.png`} width="200" height="200" alt="Logo Pessoal" className="image-Logo_site_192" />
                   </div>
                 </div>
               <h2 className='subSectionTitle'>Histórico</h2>
@@ -74,7 +74,7 @@ function App() {
                     </ul>
                   </div>
                   <div className="rightColumnEvents">
-                    <img src={`${process.env.PUBLIC_URL}/images/Logo_RP.png`} width="200" height="200" alt="Marca Pessoal" className="image-Logo_RP" />
+                    <img src={`${process.env.PUBLIC_URL}/Logo_site_192.png`} width="200" height="200" alt="Logo Pessoal" className="image-Logo_site_192" />
                   </div>
                 </div>
             </section>
