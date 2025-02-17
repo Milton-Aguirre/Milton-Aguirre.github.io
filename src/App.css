@@ -96,6 +96,46 @@ nav a {
     flex-direction: column;
     align-items: center;
   }
+
+  .section-next {
+    margin-top: 7em; /* Empurra a seção seguinte para baixo */
+  }
+  
+
+  .form_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 60vh;
+    padding: 20px;
+    padding-bottom: 5em; /* Adiciona espaço extra abaixo do formulário */
+    margin-top: 3em; /* Dá um espaçamento entre a seção anterior */
+  }
+
+  form {
+    width: 100%;
+    max-width: 450px; /* Mantém um tamanho adequado */
+    padding: 15px;
+  }
+
+  input, textarea, button {
+    width: 90%;
+    max-width: 400px;
+    position: relative; /* Mantém no fluxo normal do layout */
+  }
+
+  textarea {
+    min-width: 90%;
+    max-width: 400px;
+  }
+
+  button {
+    margin-top: 3em;
+    display: block; /* Garante que o botão ocupe uma linha inteira */
+    margin: 10px auto; /* Centraliza horizontalmente */
+    text-align: center; /* Garante que o texto do botão fique centralizado */
+  }
 }
 /* ################################################################################## */
 
@@ -185,7 +225,7 @@ nav a {
 }
 
 .section {
-  margin-bottom: 2em;
+  margin-bottom: 5em;
   width: 100%;
 }
 
@@ -200,7 +240,7 @@ nav a {
   background-color: #c49249;
   color: #ffffff;
   margin: 10px 20px;
-  margin-bottom: 0.5em;
+  /* margin-bottom: 0.5em; */
   padding: 5px 10px;
   border-radius: 10px;
 }
@@ -227,7 +267,7 @@ nav a {
   flex: 3;
   margin: 10px;
   margin-right: 10px;
-  background-color: #cacaca;
+  background-color: #dddcdb;
   padding: 10px;
   border-radius: 5px;
 }
@@ -259,7 +299,7 @@ nav a {
 .textColumn {
   flex: 3; /* Ocupa três quartas partes da distribuição horizontal da coluna */
   margin: 10px;
-  background-color: #d3d3d3; /* Fundo cinza claro */
+  background-color: #dddcdb; /* Fundo cinza claro */
   padding: 10px; /* Espaçamento interno */
   border-radius: 5px; /* Bordas arredondadas (opcional) */
 }
@@ -439,7 +479,8 @@ form { /* controla o formato do texto fora das caixas */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: right;
+  align-items: flex-start; /* Corrigido para alinhar à esquerda */
+  gap: 10px; /* Adiciona espaçamento entre os elementos */
 }
 input { /* controla a apariência das caixas Nome e Email */
   width: 60vw;

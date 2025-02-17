@@ -23,11 +23,12 @@ function sendEmail(e) {
 return (
     <div className="form_wrapper">
       <form onSubmit={sendEmail}>
-        <label>Nome</label>
+        <label>O seu endereço de e-mail não será publicado. Campos obrigatorios são marcados com *</label>
+        <label>Nome *</label>
         <input type="text" name="user_name" placeholder="Seu nome"/>
-        <label>Email</label>
+        <label>Email *</label>
         <input type="email" name="user_email" placeholder="exemplo@email.com"/>
-        <label>Menssagem</label>
+        <label>Menssagem *</label>
         <textarea name="message" rows="5" placeholder="Entre em contato para discutir assuntos acadêmicos"/>
         <button type="submit" value="Submit"> Enviar </button>
       </form>
