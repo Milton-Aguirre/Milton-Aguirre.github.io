@@ -53,8 +53,8 @@ nav a {
     box-sizing: border-box;
   } */
   .header {
-    background-color: #c21717;
-    color: #fcfcfc;
+    background-color: #77cac3;
+    color: #000000;
     padding: 1em 0;
     width: 100%;
     box-sizing: border-box;
@@ -148,9 +148,9 @@ nav a {
   box-sizing: border-box;
 } */
 .header {
-  background-color: #c21717;
-  color: #fcfcfc;
-  padding: 1em;
+  background-color: #77cac3;
+  color: #000000;
+  padding: 1.5em;
   width: 100%;
   box-sizing: border-box;
   display: flex;
@@ -190,6 +190,7 @@ nav a {
   flex-wrap: wrap;
   gap: 10px;
   justify-content: space-between;
+  padding-top: 1em
 }
 
 /* Para manter caixas alinhadas por linha */
@@ -216,7 +217,7 @@ nav a {
 
 .sidebar {
   flex: 25%;
-  background-color: #C70039;
+  background-color: #77cac3;
   color: #fff;
   padding: 1em;
   width: 100%;
@@ -511,12 +512,13 @@ button { /* controla o estilo e as propiedades do botão */
   background: transparent;
   border: none;
   border-radius: 7px;
-  background: linear-gradient(145deg, #a1764d, #f5ae14);
+  background: linear-gradient(145deg, #f39315, #f39315);
   box-shadow: 9px 9px 19px #888686, -9px -9px 19px #f0ffff;
+  color: #fcfcfc;
 }
 button:hover { /* Cor mais clara ao passar o mouse */
-  background: linear-gradient(145deg, #707ead, #3f42f5);
-  box-shadow: 9px 9px 19px #d63fa9, -9px -9px 19px #ca99c8;
+  background: linear-gradient(145deg, #3f42f5, #3f42f5);
+  box-shadow: 9px 9px 19px #d63fa9, -9px -9px 19px #f5f1f5;
 }
 textarea { /* controla o estilo da caixa da Menssagem */
   min-width: 60vw;

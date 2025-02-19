@@ -4,6 +4,7 @@ import { FaFacebook, FaInstagram, FaYoutube, FaGithub, FaLinkedin } from 'react-
 import Contact from './components/contacts';
 import Material from './components/material';
 import Portfolio from './components/portfolio';
+import LinksSection from './components/links';
 
 function App() {
   return (
@@ -81,26 +82,24 @@ function App() {
 
             <section id="links" className="section">
               <h2 className="sectionTitle">Links</h2>
-              <div className="icons">
-                <a className="link" href="https://www.linkedin.com/in/milton-aguirre-mat-52300751/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a className="link" href="https://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K8950240D2&tokenCaptchar=03AFcWeA7z4Qjl4qRQ4aBCqex6x1B9zSPzeZDg7-hAyKBGx3gLsqbRDLy4Z4Uj5urBINBzuenKqMHaovqVT4zbcLQHNrnYYPwgdsS12pyyaF1bi4SdsTmjrlU7mIv0HXR5iThkezDRcuF5A9UteSsQeeWnO8EqC36dX4BdpWMs75lW41VdZh2Y7BtJ6Ydzs9WMBZBHUaRnwj9ekWgjjIVyPVdICYTkvYpLvCSmBs67O-2-2TX1iQIkSgPoROLkvUycMDk3MO-RD369EkHjzroKdOnEPc-LKNk85dYTvAK76jG9l5FYZWtK7RNZTWyAm3Nb5HvEcAlSVvm-FavyBkKSR7KAHQLzPqk-8dSzaVcfqXKm8q_dJ7FmkUfWxluCMnhPOhDDiSEWD_ALX3jIjPFkTrIuWtPHP42WoPuhdH8UpZ9X9QqTZSoW4BqJWmaE3dWcX8Bjc7jJA6zj3K6VvYxVaM6Omhk7Ibr-nDwH3ZpnymspUF4J5qnEg6hif9Xmejb6sA0kjO7xObEzKb_zDm9NBoavtNPV2ps6k377PLn4xoDiQTXRlZmIwck1YBwx6sCwtkVgQdRW8JMxyDLCdt8Quy6eZ80dYjbOjiXFkYlQGQGfrdw08Ru4L0B9FIUrp7AAvGOXMZuVy-Op6IT1WD0PKrQUCxZUHo9zdg" target="_blank" rel="noopener noreferrer">CV Lattes</a>
-                <a className="link" href="https://github.com/Milton-Aguirre" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a className="link" href="https://sites.google.com/view/icmamlatinamerica/home" target="_blank" rel="noopener noreferrer">ICMAM Latin América</a>
-              </div>
+              <LinksSection />
             </section>
 
             <section id="portfolio">
               <h2 className="sectionTitle">Portfólio de Projetos</h2>
               <Portfolio />
             </section>
+
             <section id="material">
               <h2 className="sectionTitle">Material</h2>
               <Material />
             </section>
+
             <section>
               <h2 className="sectionTitle">Comentários</h2>
               <Contact />
             </section>
+            
             <section>
               <h2 className="sectionTitle">Visitantes</h2>
               <h5 style={{ textAlign: "center", marginTop: "20px", fontSize: "1.5rem", fontWeight: "bold", color: "#333" }}>
