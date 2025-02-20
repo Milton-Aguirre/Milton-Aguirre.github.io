@@ -28,7 +28,7 @@ function App() {
         <main className="main">
 
           <div>
-            <section className="section">
+            <section className="sectionBiografia">
               <h2 className="sectionTitle">Biografia</h2>
               <div className="nColumnSection">
                 <div className="imageColumn">
@@ -55,19 +55,19 @@ function App() {
                 <div className="nColumnSection">
                   <div className="leftColumnEvents">
                     <p>A seguir encontrará uma lista de eventos matemáticos que serão realizados próximamente.</p>
-                    <ul className="iconsEvents">
+                    <ul className="linksEvents">
                       <li><a className="link" href="" target="_blank" rel="noopener noreferrer">ISAACS Congress 2029</a></li>
                     </ul>
                   </div>
                   <div className="rightColumnEvents">
-                    <img src={`${process.env.PUBLIC_URL}/Logo_site_192.png`} width="200" height="200" alt="Logo Pessoal" className="image-Logo_site_192" />
+                    <img src={`${process.env.PUBLIC_URL}/Logo_site_192.png`} width="200" height="200" alt="Logo Pessoal" className="Logo_site_192" />
                   </div>
                 </div>
               <h2 className='subSectionTitle'>Histórico</h2>
                 <div className="nColumnSection">
                   <div className="leftColumnEvents">
                     <p>Histórico de eventos que foram realizados nos últios anos.</p>
-                    <ul className="iconsEvents">
+                    <ul className="linksEvents">
                       <li><a className="link" href="https://sites.google.com/view/math08conference" target="_blank" rel="noopener noreferrer">Congreso ICMAM Latin América 2020</a></li>
                       <li><a className="link" href="https://sites.google.com/view/matematicasunivalleicmam2022/home" target="_blank" rel="noopener noreferrer">Congreso ICMAM Latin América 2022</a></li>
                       <li><a className="link" href="https://sites.google.com/view/icmam2024/home" target="_blank" rel="noopener noreferrer">Congreso ICMAM Latin América 2024</a></li>
@@ -75,12 +75,12 @@ function App() {
                     </ul>
                   </div>
                   <div className="rightColumnEvents">
-                    <img src={`${process.env.PUBLIC_URL}/Logo_site_192.png`} width="200" height="200" alt="Logo Pessoal" className="image-Logo_site_192" />
+                    <img src={`${process.env.PUBLIC_URL}/Logo_site_192.png`} width="200" height="200" alt="Logo Pessoal" className="Logo_site_192" />
                   </div>
                 </div>
             </section>
 
-            <section id="links" className="section">
+            <section id="links" className="sectionLinks">
               <h2 className="sectionTitle">Links</h2>
               <LinksSection />
             </section>

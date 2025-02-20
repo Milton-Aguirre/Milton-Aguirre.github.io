@@ -1,57 +1,8 @@
-/* Criar uma base visual limpa para toda a página. */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-}
+/* ################################################################################################################ */
+/* Este trecho define um Media Query, que ajusta o layout quando a tela for menor que 768px (tamanho típico de tablets e celulares) */
+/* ################################################################################################################ */
 
-/* Evitar espaçamento indesejado acima/abaixo do título, alinhando-o de forma justa ao cabeçalho. */
-header h1 {
-  margin: 0;
-}
-
-/* Criar uma barra de navegação no cabeçalho visualmente limpa e espaçada. */
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 1em;
-}
-
-/* Criar cards responsivos em um layout flexível, com espaçamento consistente. */
-/* .portfolio div, .blog div, .material div {
-  flex: 30%;
-  background-color: #12eb36;
-  margin: 1%;
-  padding: 1em;
-} */
-.blog, .material {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 16px;
-  background-color: #ffffff;
-}
-
-
-/* Criar ícones de redes sociais ou contato com destaque visual. */
-.icons a {
-  color: #1044EE;
-  margin: 0 1em;
-  text-decoration: none;
-  font-size: 1.5em;
-}
-
-/* ################################################################################## */
-/* Esse trecho define um Media Query, que ajusta o layout quando a tela for menor que 768px (tamanho típico de tablets e celulares) */
 @media (max-width: 768px) {
-  /* .header {
-    background-color: #c21717;
-    color: #050505;
-    padding: 1em 0;
-    text-align: center;
-    width: 100%;
-    box-sizing: border-box;
-  } */
   .header {
     background-color: #77cac3;
     color: #000000;
@@ -63,22 +14,16 @@ nav a {
     align-items: center; /* Centraliza os itens */
     text-align: center; /* Garante que o texto fique centralizado */
   }
-
   .header-content {
     display: flex;
     /* flex-direction: column; Faz o logo e o texto ficarem um abaixo do outro */
     align-items: center; /* Centraliza os itens verticalmente */
     text-align: center; /* Alinha o texto ao centro */
   }
-
   .logo {
     width: 80px; /* Ajusta o tamanho do logo para telas pequenas */
     height: auto;
     margin-bottom: 10px; /* Adiciona espaçamento entre o logo e o texto */
-  }
-
-  .container {
-    flex-direction: column;
   }
 
   .leftColumn,
@@ -86,22 +31,14 @@ nav a {
     width: 100%;
     padding: 0;
   }
-
-  .project {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .icons {
+  
+  .links {
     flex-direction: column;
     align-items: center;
   }
-
   .section-next {
     margin-top: 7em; /* Empurra a seção seguinte para baixo */
   }
-  
-
   .form_wrapper {
     display: flex;
     justify-content: center;
@@ -112,24 +49,16 @@ nav a {
     padding-bottom: 5em; /* Adiciona espaço extra abaixo do formulário */
     margin-top: 3em; /* Dá um espaçamento entre a seção anterior */
   }
-
-  form {
+  form { /* controla o formato do texto fora das caixas */
     width: 100%;
     max-width: 450px; /* Mantém um tamanho adequado */
     padding: 15px;
   }
-
-  input, textarea, button {
+  input, textarea {
     width: 90%;
     max-width: 400px;
     position: relative; /* Mantém no fluxo normal do layout */
   }
-
-  textarea {
-    min-width: 90%;
-    max-width: 400px;
-  }
-
   button {
     margin-top: 3em;
     display: block; /* Garante que o botão ocupe uma linha inteira */
@@ -137,16 +66,14 @@ nav a {
     text-align: center; /* Garante que o texto do botão fique centralizado */
   }
 }
-/* ################################################################################## */
 
-/* .header {
-  background-color: #c21717;
-  color: #fcfcfc;
-  padding: 1em 0;
-  text-align: center;
-  width: 100%;
-  box-sizing: border-box;
-} */
+/* ################################################################################################################ */
+/* O seguinte código estiliza cada os componentes do site para telas tipo moitor. O código conserva a mesma ordem do site e consta de comentarios para melhor entendimento */
+/* ################################################################################################################ */
+
+/* ################################################################################################################ */
+/* Estiliza o cabeçalo do site */
+
 .header {
   background-color: #77cac3;
   color: #000000;
@@ -157,27 +84,28 @@ nav a {
   align-items: center; /* Alinha os itens verticalmente */
   justify-content: center; /* Mantém o conteúdo centralizado horizontalmente */
 }
-
 .header-content {
   display: flex;
   align-items: center; /* Centraliza logo e texto verticalmente */
   text-align: left; /* Mantém o texto alinhado à esquerda */
 }
-
-.logo {
+.logo { /* Estiliza o logo no cabeçalo do site */
   width: 50px; /* Ajuste conforme necessário */
   height: auto;
   margin-right: 15px; /* Espaço entre o logo e o texto */
 }
 
+/* ################################################################################################################ */
+/* Criar uma barra de navegação no cabeçalho visualmente limpa e espaçada. */
 
-
-
-
+nav a { /* esta regra se aplica apenas aos elementos <a> (links) que estão dentro de um elemento com a classe .nav */
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1em;
+}
 
 .nav {
   background-color: #486a6e;
-  color: #0e0d0d;
   padding: 1em;
   width: 100%;
   box-sizing: border-box;
@@ -185,12 +113,161 @@ nav a {
   justify-content: space-around;
 }
 
+/* ################################################################################################################ */
+/* Estiliza o corpo do site */
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 .container {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: space-between;
-  padding-top: 1em
+  padding-top: 1em;
+}
+/* Criar uma base visual limpa para toda a página. */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+/* ################################################################################################################ */
+/* Estiliza as seções */
+
+.sectionBiografia {
+  /* background-color: #4ebe44; */
+  width: 100%;
+}
+.sectionLinks {
+  margin-bottom: 5em;
+  width: 100%;
+}
+.sectionTitle {
+  background-color: #be6f44;
+  color: #000000;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.subSectionTitle {
+  background-color: #c49249;
+  color: #ffffff;
+  margin: 10px 20px;
+  /* margin-bottom: 0.5em; */
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+/* ################################################################################################################ */
+/* Estiliza os blocos de colunas, utilizados nas seções Biografia e Eventos */
+
+.nColumnSection {
+  display: flex;
+  margin: 10px 20px;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 95%;
+}
+
+.leftColumnEvents {
+  flex: 3;
+  margin: 10px;
+  margin-right: 10px;
+  background-color: #dddcdb;
+  padding: 10px;
+  border-radius: 5px;
+}
+.rightColumnEvents {
+  justify-content: center;
+  flex: 1;
+  margin: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  background-color: #f4f4f4;
+  padding: 10px;
+}
+
+.imageColumn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 50vh; */
+  flex: 1; /* Ocupa uma quarta parte da distribuição horizontal da coluna */
+  margin: 10px;
+}
+.textColumn {
+  flex: 3; /* Ocupa três quartas partes da distribuição horizontal da coluna */
+  margin: 10px;
+  background-color: #dddcdb; /* Fundo cinza claro */
+  padding: 10px; /* Espaçamento interno */
+  border-radius: 5px; /* Bordas arredondadas (opcional) */
+}
+
+/* ################################################################################################################ */
+/* Estiliza a seção biografia */
+
+.image {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border: 2px solid black;
+}
+
+
+
+
+
+/* ################################################################################################################ */
+/* Estiliza a seção eventos */
+
+.linksEvents { /* O seguinte código é usado para estilizar os links dentro da coluna  */
+  display: flex;
+  flex-direction: column;
+  list-style-type: disc;
+  padding-left: 20px;
+}
+.link { /* O seguinte código é usado para estilizar os links na seção eventos */
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #1044EE;
+}
+.Logo_site_192 {
+  /* display: flex; */
+  display: block; /* Remove comportamento inline */
+  margin: auto; /* Centraliza horizontalmente */
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+}
+
+/* ################################################################################################################ */
+/* Estiliza os links na seção links */
+
+.links a { /* esta regra se aplica apenas aos elementos <a> (links) que estão dentro de um elemento com a classe .links */
+  color: #1044EE;
+  margin: 0 1em;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+.links {
+  display: flex;
+  margin: 10px;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+/* ################################################################################################################ */
+/* Estiliza as caixas utilizadas na seção Potfolio e Material */
+
+.blog, .material {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  background-color: #ffffff;
 }
 
 /* Para manter caixas alinhadas por linha */
@@ -202,181 +279,29 @@ nav a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: stretch; /* Permite que os elementos se alinhem melhor */
+  /* align-items: flex-start; */
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
   margin: 2em;
 }
 
 
 
-.main {
+/* ################################################################################################################ */
+/* Estiliza a seção portfólio de projetos */
+
+
+/* ################################################################################################################ */
+/* Estiliza a seção material */
+
+.card .category-container { /* faz com que o logo fique lado a lado com o texto */
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.sidebar {
-  flex: 25%;
-  background-color: #77cac3;
-  color: #fff;
-  padding: 1em;
-  width: 100%;
-  box-sizing: border-box;
-  margin: 0em;
-}
-
-.section {
-  margin-bottom: 5em;
-  width: 100%;
-}
-
-.sectionTitle {
-  background-color: #be6f44;
-  color: #080808;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-.subSectionTitle {
-  background-color: #c49249;
-  color: #ffffff;
-  margin: 10px 20px;
-  /* margin-bottom: 0.5em; */
-  padding: 5px 10px;
-  border-radius: 10px;
-}
-
-.nColumnSection {
-  display: flex;
-  margin: 10px 20px;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 95%;
-}
-
-.leftColumn {
-  background-color: #FBE7E5;
-  width: 100%;
-}
-
-.rightColumn {
-  background-color: #f0f0f0;
-  width: 100%;
-}
-
-.leftColumnEvents {
-  flex: 3;
-  margin: 10px;
-  margin-right: 10px;
-  background-color: #dddcdb;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.rightColumnEvents {
-  justify-content: center;
-  flex: 1;
-  margin: 10px;
-  margin-right: 10px;
-  margin-left: 10px;
-  background-color: #f0f0f0;
-  padding: 10px;
-}
-
-.column {
-  flex: 1;
-  margin: 10px;
-}
-
-.imageColumn {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  /* height: 50vh; */
-  flex: 1; /* Ocupa uma quarta parte da distribuição horizontal da coluna */
-  margin: 10px;
+  gap: 8px;
 }
 
-.textColumn {
-  flex: 3; /* Ocupa três quartas partes da distribuição horizontal da coluna */
-  margin: 10px;
-  background-color: #dddcdb; /* Fundo cinza claro */
-  padding: 10px; /* Espaçamento interno */
-  border-radius: 5px; /* Bordas arredondadas (opcional) */
-}
-
-.project {
-  flex: 1;
-  margin: 10px;
-  padding: 5px;
-  background-color: #d3d3d3;
-  border-radius: 5px;
-}
-
-.project h4 {
-  margin-top: 10px; /* Ajustar o espaçamento do topo de h4 */
-}
-
-.image {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
-  border: 2px solid black;
-}
-
-.image-Logo_site_192 {
-  display: flex;
-  width: 100%;
-  max-width: 100px;
-  height: auto;
-}
-
-.iconsEvents {
-  display: flex;
-  flex-direction: column;
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
-.icons {
-  display: flex;
-  margin: 10px;
-  justify-content: space-around;
-  align-items: stretch;
-}
-
-.icon {
-  width: 50px;
-  height: 50px;
-}
-
-.iconPDF {
-  width: 80px;
-  height: 80px;
-  justify-content: center;
-  align-items: center;
-}
-
-.link {
-  margin-bottom: 10px;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-}
-
-.input {
-  margin: 0.5em 0;
-  padding: 0.5em;
-  font-size: 1em;
-}
-
-.textarea {
-  margin: 0.5em 0;
-  padding: 0.5em;
-  font-size: 1em;
-}
+/* ################################################################################################################ */
+/* Estiliza o botão de visualização de PDFs */
 
 .buttonPDF {
   width: 100%; /* Ocupa toda a largura do card */
@@ -390,52 +315,13 @@ nav a {
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2); /* Sombra leve */
   transition: background 0.3s ease-in-out;
 }
-
 .buttonPDF:hover {
   background: #bb81e7; /* Cor mais escura ao passar o mouse */
+  box-shadow: 9px 9px 19px #d63fa9;
 }
 
-
-.imgContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.imgStyle {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.socialMedia {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.socialIcon { /* controla a cor dos icones de redes sociais */
-  color: #fff;
-}
-
-.bamdeiras { /* controla o posicionamento da caixa de bamdeiras de visitantes */
-  text-align: center;
-  margin-top: 1rem;
-}
-
-.footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 1em 0;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* ################################################################################## */
-/* O seguinte código é usado para estilizar a janela flutuante de visualização de PDFs */
+/* ################################################################################################################ */
+/* Estiliza a janela flutuante de visualização de PDFs */
 
 .modal {
   position: fixed;
@@ -449,7 +335,6 @@ nav a {
   align-items: center;
   z-index: 1000;
 }
-
 .modal-content {
   background: white;
   padding: 20px;
@@ -458,7 +343,6 @@ nav a {
   max-width: 800px;
   position: relative;
 }
-
 .close {
   position: absolute;
   top: 10px;
@@ -467,9 +351,9 @@ nav a {
   cursor: pointer;
 }
 
+/* ################################################################################################################ */
+/* Estiliza a caixa de comentarios */
 
-/* ################################################################################## */
-/* O seguinte código é usado para estilizar a caixa de comentarios */
 .form_wrapper { /* controla o posisionamento dos elementos dentro de section */
   display: flex;
   justify-content: center;
@@ -530,4 +414,43 @@ textarea { /* controla o estilo da caixa da Menssagem */
   box-shadow: inset 9px 9px 19px #d9d9d9, inset -9px -9px 19px
               #c5c3c3;
 }
-/* ################################################################################## */
+
+/* ################################################################################################################ */
+/* Controla o posicionamento da caixa de bamdeiras de visitantes */
+
+.bamdeiras { 
+  text-align: center;
+  margin-top: 1rem;
+  padding: 0.5em;
+}
+
+/* ################################################################################################################ */
+/* Código usado para estilizar o footer do site */
+
+.sidebar {
+  flex: 25%;
+  background-color: #77cac3;
+  padding: 1em;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0em;
+}
+.socialMedia {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+.socialIcon { /* controla a cor dos icones de redes sociais */
+  color: #ffffff;
+}
+.footer {
+  background-color: #000000;
+  color: #fff;
+  text-align: center;
+  padding: 2em 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ################################################################################################################ */

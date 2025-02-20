@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-const Card = ({ category, title, imgSrc, pdfUrl, onOpen }) => {
+const Card = ({ category, title, imgSrc, pdfUrl, onOpen, altText }) => {
     return (
-      <div className="card w-full">
-        <div className="flex items-center gap-2 mb-2">
-          {imgSrc && <img src={imgSrc} className="w-6" />}
-          {/* <img src={imgSrc} className="w-6" alt={altText} /> */}
+      <div className="card">
+        <div className="category-container">
+          {/* {imgSrc && <img src={imgSrc} className="w-6" />} */}
+          <img src={imgSrc} className="w-6" alt={altText} />
           <p className="font-bold text-sm text-gray-900/75">{category}</p>
         </div>
         <h4 className="text-sm font-bold mb-4">{title}</h4>
@@ -27,44 +27,51 @@ const Card = ({ category, title, imgSrc, pdfUrl, onOpen }) => {
       {
         category: "Proximamente PDF com exercicios resolvidos",
         title: "Sistemas Dinâmicos",
-        imgSrc: "",
-        pdfUrl:""
+        imgSrc: "Logo_site_32.ico",
+        pdfUrl:"",
+        altText:"Matemática"
       },
       {
         category: "Proximamente PDF com exercicios resolvidos",
         title: "Teoria de Galois",
-        imgSrc: "",
-        pdfUrl:""
+        imgSrc: "Logo_site_32.ico",
+        pdfUrl:"",
+        altText:"Matemática"
       },
       {
         category: "Proximamente PDF com exercicios resolvidos",
         title: "Formas Diferenciais",
-        imgSrc: "",
-        pdfUrl:""
+        imgSrc: "Logo_site_32.ico",
+        pdfUrl:"",
+        altText:"Matemática"
       },
       {
         category: "Proximamente PDF com exercicios resolvidos",
         title: "Geometria Riemanniana",
-        imgSrc: "",
-        pdfUrl:""
+        imgSrc: "Logo_site_32.ico",
+        pdfUrl:"",
+        altText:"Matemática"
       },
       {
         category: "Proximamente PDF com exercicios resolvidos",
         title: "Análisis Numérico",
-        imgSrc: "",
-        pdfUrl:""
+        imgSrc: "Logo_site_32.ico",
+        pdfUrl:"",
+        altText:"Matemática"
       },
       {
         category: "Proximamente PDF com exercicios resolvidos",
         title: "Teoria de Grafos",
-        imgSrc: "",
-        pdfUrl:""
+        imgSrc: "Logo_site_32.ico",
+        pdfUrl:"",
+        altText:"Matemática"
       },
       {
         category: "Proximamente PDF com exercicios resolvidos",
         title: "Data Science e Analytics",
-        imgSrc: "",
-        pdfUrl:""
+        imgSrc: "Logo_site_32.ico",
+        pdfUrl:"",
+        altText:"Matemática"
       }
     ];
   

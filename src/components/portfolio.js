@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const Project = ({ title, institution, description, imgSrc, pdfUrl, onOpen  }) => {
   return (
-    <div className="card w-full">
+    <div className="card">
       <div className="flex items-center gap-2 mb-2">
         {/* {imgSrc && <img src={imgSrc} className="w-6" alt={description} />} */}
         <img src={imgSrc} className="w-6" alt={description} />

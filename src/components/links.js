@@ -9,7 +9,7 @@ const LinksSection = () => {
     ];
   
     return (
-        <div className="icons">
+        <div className="links">
           {links.map((link, index) => (
             <a 
               key={index} 
