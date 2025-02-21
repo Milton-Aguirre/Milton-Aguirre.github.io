@@ -270,6 +270,38 @@ body {
   background-color: #ffffff;
 }
 
+/* ################################################################################################################ */
+/* Estiliza a seção portfólio de projetos */
+
+/* Para manter caixas alinhadas por linha */
+.cardPortfolio {
+  background-color: #c4c2c3; /* Cinza claro */
+  padding: 16px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+  min-height: 220px; /* Altura mínima para manter padrão */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch; /* Permite que os elementos se alinhem melhor */
+  /* align-items: flex-start; */
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  margin: 2em;
+}
+.image-container {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  width: 100%; /* Faz com que o contêiner ocupe toda a largura disponível */
+}
+.cardPortfolio img {
+  width: 100%;
+  object-fit: cover; /* Mantém proporção e corta o excesso */
+  border-radius: 8px; /* Cantos arredondados */
+}
+
+/* ################################################################################################################ */
+/* Estiliza a seção material */
+
 /* Para manter caixas alinhadas por linha */
 .card {
   background-color: #c4c2c3; /* Cinza claro */
@@ -284,16 +316,6 @@ body {
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
   margin: 2em;
 }
-
-
-
-/* ################################################################################################################ */
-/* Estiliza a seção portfólio de projetos */
-
-
-/* ################################################################################################################ */
-/* Estiliza a seção material */
-
 .card .category-container { /* faz com que o logo fique lado a lado com o texto */
   display: flex;
   align-items: center;

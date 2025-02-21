@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 
 const Project = ({ title, institution, description, imgSrc, pdfUrl, onOpen  }) => {
   return (
-    <div className="card">
+    <div className="cardPortfolio">
       <div className="flex items-center gap-2 mb-2">
-        {/* {imgSrc && <img src={imgSrc} className="w-6" alt={description} />} */}
-        <img src={imgSrc} className="w-6" alt={description} />
+        <div className='image-container'>
+          <img src={imgSrc} alt={description} />
+        </div>
         <p className="font-bold text-sm text-gray-900/75">{institution}</p>
       </div>
       <h4 className="text-sm font-bold mb-4">{title}</h4>
@@ -30,21 +31,28 @@ const Portfolio = () => {
       institution:"Universidad del Valle", 
       description:"Álgebras de Frobenius",
       pdfUrl:"/pdfs/projeto_de_grado.pdf",
-      imgSrc:"Logo_site_192.png"
+      imgSrc:"/images/Univalle.jpg"
     },
     {
       title:"Disertação Mestrado",
       institution:"Universidade Federal de Viçosa", 
       description:"Alguns resultados da teoria de Rk -ações sobre variedades diferenciáveis",
       pdfUrl:"/pdfs/disertação_mestrado.pdf",
-      imgSrc:"Logo_site_192.png"
+      imgSrc:"/images/UFV.jpg"
     },
     {
       title:"TCC Especialização",
       institution:"Univesp", 
       description:"Perfil dos alunos da Universidade Virtual do Estado de São Paulo em relação à inclusão digital, 2022",
       pdfUrl:"/pdfs/tcc_especializacao.pdf",
-      imgSrc:"Logo_site_192.png"
+      imgSrc:"/images/Univesp.jpg"
+    },
+    {
+      title:"EM DESENVOLVIMENTO",
+      institution:"MBA USP Esalq", 
+      description:"",
+      pdfUrl:"",
+      imgSrc:"/images/MBA_USP.jpg"
     }
   ];
   
