@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
 import { FaFacebook, FaInstagram, FaYoutube, FaGithub, FaLinkedin } from 'react-icons/fa';
-import Contact from './components/contacts';
-import Material from './components/material';
-import Portfolio from './components/portfolio';
+import Biography from './components/biography';
+import Events from './components/events';
 import LinksSection from './components/links';
+import Portfolio from './components/portfolio';
+import Material from './components/material';
+import Contact from './components/contacts';
 
 function App() {
   return (
@@ -28,56 +30,14 @@ function App() {
         <main className="main">
 
           <div>
-            <section className="sectionBiografia">
+            <section>
               <h2 className="sectionTitle">Biografia</h2>
-              <div className="nColumnSection">
-                <div className="imageColumn">
-                  <img src={`${process.env.PUBLIC_URL}/images/Milton.jpeg`} alt="Personal Photo" className="image" />
-                </div>
-                <div className="textColumn">
-                  <p>
-                    <strong>Milton Aguirre</strong> é formado em Matemática e possui mestrado na mesma área, 
-                    além de atuar como cientista de dados. Com um sólido background técnico, 
-                    também possui o título de Técnico em Instalações Elétricas. Além disso, 
-                    é especializado em Ensino de Educação a Distância, combinando conhecimentos 
-                    acadêmicos com experiência prática em tecnologia e educação. Seu trabalho é 
-                    marcado pela aplicação de métodos matemáticos avançados para resolver 
-                    problemas complexos e pela paixão por compartilhar conhecimento em sala de aula e através de 
-                    plataformas digitais.
-                  </p>
-                </div>
-              </div>
+              <Biography />
             </section>
 
             <section id="events">
               <h2 className="sectionTitle">Eventos</h2>
-              <h2 className='subSectionTitle'>Próximos</h2>
-                <div className="nColumnSection">
-                  <div className="leftColumnEvents">
-                    <p>A seguir encontrará uma lista de eventos matemáticos que serão realizados próximamente.</p>
-                    <ul className="linksEvents">
-                      <li><a className="link" href="" target="_blank" rel="noopener noreferrer">ISAACS Congress 2029</a></li>
-                    </ul>
-                  </div>
-                  <div className="rightColumnEvents">
-                    <img src={`${process.env.PUBLIC_URL}/Logo_site_192.png`} width="200" height="200" alt="Logo Pessoal" className="Logo_site_192" />
-                  </div>
-                </div>
-              <h2 className='subSectionTitle'>Histórico</h2>
-                <div className="nColumnSection">
-                  <div className="leftColumnEvents">
-                    <p>Histórico de eventos que foram realizados nos últios anos.</p>
-                    <ul className="linksEvents">
-                      <li><a className="link" href="https://sites.google.com/view/math08conference" target="_blank" rel="noopener noreferrer">Congreso ICMAM Latin América 2020</a></li>
-                      <li><a className="link" href="https://sites.google.com/view/matematicasunivalleicmam2022/home" target="_blank" rel="noopener noreferrer">Congreso ICMAM Latin América 2022</a></li>
-                      <li><a className="link" href="https://sites.google.com/view/icmam2024/home" target="_blank" rel="noopener noreferrer">Congreso ICMAM Latin América 2024</a></li>
-                      <li><a className="link" href="https://sites.google.com/view/isaac-icmam-conference-4-women/" target="_blank" rel="noopener noreferrer">ISAACS-ICMAM Conference for Women in Mathematics 2024</a></li>
-                    </ul>
-                  </div>
-                  <div className="rightColumnEvents">
-                    <img src={`${process.env.PUBLIC_URL}/Logo_site_192.png`} width="200" height="200" alt="Logo Pessoal" className="Logo_site_192" />
-                  </div>
-                </div>
+              <Events />
             </section>
 
             <section id="links" className="sectionLinks">
