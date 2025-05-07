@@ -66,7 +66,7 @@ const Portfolio = () => {
         <div className="modal">
           <div className="modal-content">
             <span className="close" onClick={() => setSelectedPdf(null)}>&times;</span>
-            <iframe src={selectedPdf} width="100%" height="500px" />
+            <iframe src={selectedPdf} title="Arquivo PDF" width="100%" height="500px" />
           </div>
         </div>
       )}
