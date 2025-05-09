@@ -23,7 +23,7 @@ function HomePage() {
            <nav className="nav">
             <ScrollLink to="events" smooth={true} duration={500}>Eventos</ScrollLink>
             <ScrollLink to="links" smooth={true} duration={500}>Links</ScrollLink>
-            <ScrollLink to="portfolio" smooth={true} duration={500}>Portfólio</ScrollLink>
+            <ScrollLink to="portfolio" smooth={true} duration={500}>Títulos</ScrollLink>
             <Link to="/material">Material</Link>
             <Link to="/jogos">Jogos</Link>
            </nav>
@@ -46,6 +46,12 @@ function HomePage() {
                        marcado pela aplicação de métodos matemáticos avançados para resolver 
                        problemas complexos e pela paixão por compartilhar conhecimento em sala de aula e através de 
                        plataformas digitais.
+                     </p>
+                     
+                     <p>
+                       Em 2020, se juntou a seus companheiros de graduação da Universidad del Valle para criarem 
+                       a International Community of Mathematicians from Latin America ICMAM, que mais tarde virou um evento Bienal de grande impacto na comunidade matemática 
+                       da America Latina e o Caribe.
                      </p>
                    </div>
                  </div>
@@ -91,7 +97,7 @@ function HomePage() {
                </section>
   
                <section id="portfolio">
-                 <h2 className="sectionTitle">Portfólio de Projetos</h2>
+                 <h2 className="sectionTitle">Títulos</h2>
                  <Portfolio />
                </section>
   

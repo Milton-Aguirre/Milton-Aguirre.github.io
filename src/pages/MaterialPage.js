@@ -6,8 +6,8 @@ import Material from '../components/material';
 
 export default function MaterialPage() {
   return (
-    <div className="container">
-      <div className="App">
+    <div className="main">
+      <div className="container">
         <header className="header">
           <div className="header-content">
             <img src={`${process.env.PUBLIC_URL}/Logo_site_192.png`} alt="Logo" className="logo" />
@@ -24,10 +24,8 @@ export default function MaterialPage() {
           <Link to="/jogos">Jogos</Link>
         </nav>
 
-        <div className="container">
-          <h2 className="sectionTitle">Material</h2>
-          <Material />
-        </div>
+        <h2 className="sectionTitle">Material</h2>
+        <Material />
 
         <footer className="footer">
           <aside className="sidebar">

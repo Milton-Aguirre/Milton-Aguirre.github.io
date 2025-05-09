@@ -1,12 +1,13 @@
 import React from 'react';
-import EightPuzzle from '../puzzles/rachaCuca';
 import { FaFacebook, FaInstagram, FaYoutube, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
+import EightPuzzle from '../puzzles/rachaCuca';
+
 export default function PuzzlesPage() {
   return (
-    <div className="container">
-      <div className="App">
+    <div className="main">
+      <div className="container">
         <header className="header">
           <div className="header-content">
             <img src={`${process.env.PUBLIC_URL}/Logo_site_192.png`} alt="Logo" className="logo" />
@@ -23,10 +24,17 @@ export default function PuzzlesPage() {
           <Link to="/jogos">Jogos</Link>
         </nav>
 
-        <div className="container">
-          <h2 className="sectionTitle">Jogos</h2>
-          <EightPuzzle />
-        </div>
+        <h2 className="sectionTitle">Jogos</h2>
+          <h2 className='subSectionTitle'>Racha Cuca</h2>
+            <div className="nColumnSection">
+              <div className="leftColumnEvents">
+                <EightPuzzle />
+              </div>
+              <div className="rightColumnEvents">
+                <p>Este jogo consiste em mover uma pesa à vez ao espaço vazio, de tal maneira a organizar os números estejam em ordem crezcente.</p>
+              </div>
+            </div>      
+          
 
         <footer className="footer">
           <aside className="sidebar">

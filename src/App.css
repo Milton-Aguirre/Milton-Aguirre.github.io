@@ -68,7 +68,7 @@
 }
 
 /* ################################################################################################################ */
-/* O seguinte código estiliza cada os componentes do site para telas tipo moitor. O código conserva a mesma ordem do site e consta de comentarios para melhor entendimento */
+/* O seguinte código estiliza os componentes do site para telas tipo moitor. O código conserva a mesma ordem do site e consta de comentarios para melhor entendimento */
 /* ################################################################################################################ */
 
 /* ################################################################################################################ */
@@ -98,10 +98,14 @@
 /* ################################################################################################################ */
 /* Criar uma barra de navegação no cabeçalho visualmente limpa e espaçada. */
 
-nav a { /* esta regra se aplica apenas aos elementos <a> (links) que estão dentro de um elemento com a classe .nav */
+.nav a { /* esta regra se aplica apenas aos elementos <a> (links) que estão dentro de um elemento com a classe .nav */
   color: #fff;
   text-decoration: none;
   margin: 0 1em;
+}
+
+.nav a:hover {
+  color: #aad1d3; /* cor mais clara no hover */
 }
 
 .nav {
@@ -113,6 +117,8 @@ nav a { /* esta regra se aplica apenas aos elementos <a> (links) que estão dent
   justify-content: space-around;
 }
 
+
+
 /* ################################################################################################################ */
 /* Estiliza o corpo do site */
 
@@ -122,16 +128,20 @@ nav a { /* esta regra se aplica apenas aos elementos <a> (links) que estão dent
   width: 100%;
 }
 .container {
-  display: flex;
+  width: 100%;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: space-between;
   padding-top: 1em;
+  box-sizing: border-box;
 }
+
 /* Criar uma base visual limpa para toda a página. */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
@@ -271,7 +281,7 @@ body {
 }
 
 /* ################################################################################################################ */
-/* Estiliza a seção portfólio de projetos */
+/* Estiliza a seção titulos */
 
 /* Para manter caixas alinhadas por linha */
 .cardPortfolio {
