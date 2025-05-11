@@ -118,7 +118,7 @@ export default function Puzzle8() {
     }
 
     if (vitoria) {
-      ctx.fillStyle = 'rgba(0, 255, 0, 0.6)';
+      ctx.fillStyle = 'rgba(0, 255, 0, 0.8)';
       ctx.fillRect(0, TAMANHO / 3, TAMANHO, TAMANHO_CELULA);
       ctx.fillStyle = 'white';
       ctx.font = '28px Arial';
@@ -233,16 +233,28 @@ export default function Puzzle8() {
         style={{ border: '1px solid black', marginBottom: '10px' }}
       />
       <div style={{ display: 'flex', gap: '10px' }}>
-        <button onClick={resolver} disabled={vitoria || animando}>Resolver</button>
-        <button onClick={() => {
-          const novo = gerarTabuleiroSolucionavel();
-          setTabuleiro(novo);
-          setCaminho([]);
-          setPasso(0);
-          setVitoria(false);
-        }}>
+      <div className="botoes-jogo">
+        <button
+          className="botao-jogo"
+          onClick={resolver}
+          disabled={vitoria || animando}
+        >
+          Resolver
+        </button>
+
+        <button
+          className="botao-jogo"
+          onClick={() => {
+            const novo = gerarTabuleiroSolucionavel();
+            setTabuleiro(novo);
+            setCaminho([]);
+            setPasso(0);
+            setVitoria(false);
+          }}
+        >
           Novo jogo
         </button>
+      </div>
       </div>
     </div>
   );

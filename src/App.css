@@ -486,3 +486,33 @@ textarea { /* controla o estilo da caixa da Menssagem */
 }
 
 /* ################################################################################################################ */
+/* Código utilizado para estilizar os botões do jogo*/
+
+.botao-jogo {
+  width: 150px;
+  height: 40px;
+  font-size: 1em;
+  background-color: #486a6e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-align: center;
+}
+
+.botao-jogo:hover {
+  background-color: #355153;
+}
+
+.botao-jogo:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+.botoes-jogo {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}

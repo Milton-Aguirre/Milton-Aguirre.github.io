@@ -27,11 +27,13 @@ export default function PuzzlesPage() {
         <h2 className="sectionTitle">Jogos</h2>
           <h2 className='subSectionTitle'>Racha Cuca</h2>
             <div className="nColumnSection">
-              <div className="leftColumnEvents">
+              <div className="rightColumnEvents">
                 <EightPuzzle />
               </div>
-              <div className="rightColumnEvents">
-                <p>Este jogo consiste em mover uma pesa à vez ao espaço vazio, de tal maneira a organizar os números estejam em ordem crezcente.</p>
+              <div className="leftColumnEvents">
+                <p>Este jogo consiste em mover uma peça por vez para o espaço em branco, com o objetivo de 
+                  organizar os números em ordem crescente.
+                </p>
               </div>
             </div>      
           
