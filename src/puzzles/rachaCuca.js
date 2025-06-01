@@ -118,7 +118,7 @@ export default function Puzzle8() {
     }
 
     if (vitoria) {
-      ctx.fillStyle = 'rgba(0, 255, 0, 0.8)';
+      ctx.fillStyle = 'rgba(116, 177, 186, 0.8)';
       ctx.fillRect(0, TAMANHO / 3, TAMANHO, TAMANHO_CELULA);
       ctx.fillStyle = 'white';
       ctx.font = '28px Arial';

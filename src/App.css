@@ -338,8 +338,8 @@ body {
 .buttonPDF {
   width: 100%; /* Ocupa toda a largura do card */
   padding: 10px; /* Espaçamento interno confortável */
-  background: #f39315;
-  color: #b503fc;
+  background: #778899;
+  color: #f99614;
   border: none;
   border-radius: 5px; /* Bordas arredondadas */
   font-weight: bold;
@@ -348,8 +348,9 @@ body {
   transition: background 0.3s ease-in-out;
 }
 .buttonPDF:hover {
-  background: #bb81e7; /* Cor mais escura ao passar o mouse */
-  box-shadow: 9px 9px 19px #d63fa9;
+  background: #f99614; /* Cor mais escura ao passar o mouse */
+  color: #ffffff;
+  /*box-shadow: 9px 9px 19px #e1ac44;*/
 }
 
 /* ################################################################################################################ */
@@ -428,13 +429,14 @@ button { /* controla o estilo e as propiedades do botão */
   background: transparent;
   border: none;
   border-radius: 7px;
-  background: linear-gradient(145deg, #f39315, #f39315);
+  background: linear-gradient(145deg, #778899, #778899);
   box-shadow: 9px 9px 19px #888686, -9px -9px 19px #f0ffff;
-  color: #fcfcfc;
+  color: #383736;
 }
 button:hover { /* Cor mais clara ao passar o mouse */
-  background: linear-gradient(145deg, #3f42f5, #3f42f5);
-  box-shadow: 9px 9px 19px #d63fa9, -9px -9px 19px #f5f1f5;
+  background: linear-gradient(145deg, #60b0f2, #60b0f2);
+  color: #ffffff;
+  /* box-shadow: 9px 9px 19px #bceed2, -9px -9px 19px #f7f9f8;*/
 }
 textarea { /* controla o estilo da caixa da Menssagem */
   min-width: 60vw;
@@ -443,8 +445,7 @@ textarea { /* controla o estilo da caixa da Menssagem */
   border: none;
   border-radius: 15px;
   background: #ffffff;
-  box-shadow: inset 9px 9px 19px #d9d9d9, inset -9px -9px 19px
-              #c5c3c3;
+  box-shadow: inset -9px -9px 19px #c5c3c3;
 }
 
 /* ################################################################################################################ */
@@ -493,7 +494,7 @@ textarea { /* controla o estilo da caixa da Menssagem */
   height: 40px;
   font-size: 1em;
   background-color: #486a6e;
-  color: white;
+  color: #383736;
   border: none;
   border-radius: 5px;
   cursor: pointer;
