@@ -68,7 +68,7 @@
 }
 
 /* ################################################################################################################ */
-/* O seguinte código estiliza os componentes do site para telas tipo moitor. O código conserva a mesma ordem do site e consta de comentarios para melhor entendimento */
+/* O seguinte código estiliza os componentes do site para telas tipo moitor.*/
 /* ################################################################################################################ */
 
 /* ################################################################################################################ */
@@ -137,7 +137,7 @@
 }
 
 /* Criar uma base visual limpa para toda a página. */
-body {
+html, body, #root {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   height: 100%;
