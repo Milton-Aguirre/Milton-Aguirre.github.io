@@ -77,7 +77,7 @@
 .header {
   background-color: #77cac3;
   color: #000000;
-  padding: 1.5em;
+  padding: 1.0em;
   width: 100%;
   box-sizing: border-box;
   display: flex;
@@ -89,8 +89,11 @@
   align-items: center; /* Centraliza logo e texto verticalmente */
   text-align: left; /* Mantém o texto alinhado à esquerda */
 }
+.header-content h1 {
+  margin-bottom: 4px;
+}
 .logo { /* Estiliza o logo no cabeçalo do site */
-  width: 50px; /* Ajuste conforme necessário */
+  width: 100px; /* Ajuste conforme necessário */
   height: auto;
   margin-right: 15px; /* Espaço entre o logo e o texto */
 }

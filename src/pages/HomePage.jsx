@@ -11,7 +11,7 @@ function HomePage() {
     return (
       <div className="container">
           <div className="App">
-            <header className="header">
+           <header className="header">
              <div className="header-content">
                <img src="/Logo_site_192.png" alt="Logo" className="logo" />
                 <div>
