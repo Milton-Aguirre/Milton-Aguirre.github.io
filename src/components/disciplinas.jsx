@@ -20,7 +20,7 @@ const Card = ({ category, title, imgSrc, pdfUrl, onOpen, altText }) => {
     );
   };
   
-  const Material = () => {
+  const Disciplinas = () => {
     const [selectedPdf, setSelectedPdf] = useState(null);
 
     const data = [
@@ -93,5 +93,5 @@ const Card = ({ category, title, imgSrc, pdfUrl, onOpen, altText }) => {
     );
   };
   
-  export default Material;
+  export default Disciplinas;
   

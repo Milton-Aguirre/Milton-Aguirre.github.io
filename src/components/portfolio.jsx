@@ -37,7 +37,7 @@ const Portfolio = () => {
       title:"Disertação Mestrado",
       institution:"Universidade Federal de Viçosa", 
       description:"Alguns resultados da teoria de Rk -ações sobre variedades diferenciáveis",
-      pdfUrl:"/pdfs/disertação_mestrado.pdf",
+      pdfUrl:"/pdfs/disertacao_mestrado.pdf",
       imgSrc:"/images/UFV.jpg"
     },
     {

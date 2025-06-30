@@ -2,9 +2,9 @@ import React from 'react';
 import { FaFacebook, FaInstagram, FaYoutube, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-import Material from '../components/material.jsx';
+import Disciplinas from '../components/disciplinas.jsx';
 
-export default function MaterialPage() {
+export default function DisciplinasPage() {
   return (
     <div className="main">
       <div className="container">
@@ -20,17 +20,17 @@ export default function MaterialPage() {
 
         <nav className="nav">
           <Link to="/">Home</Link>
-          <Link to="/material">Material</Link>
+          <Link to="/disciplinas">Disciplinas</Link>
           <Link to="/jogos">Jogos</Link>
         </nav>
 
-        <h2 className="sectionTitle">Material</h2>
-        <Material />
+        <h2 className="sectionTitle">Disciplinas</h2>
+        <Disciplinas />
 
         <footer className="footer">
           <aside className="sidebar">
             <div className="socialMedia">
-              <a href="https://www.facebook.com/cofradia.academica.1" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/icmam" target="_blank" rel="noopener noreferrer">
                 <FaFacebook size={40} className="socialIcon" />
               </a>
               <a href="https://www.instagram.com/icmam_math_conference?igsh=eWx2M3FlYWxucTJ0" target="_blank" rel="noopener noreferrer">

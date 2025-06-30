@@ -24,7 +24,7 @@ function HomePage() {
             <ScrollLink to="events" smooth={true} duration={500}>Eventos</ScrollLink>
             <ScrollLink to="links" smooth={true} duration={500}>Links</ScrollLink>
             <ScrollLink to="portfolio" smooth={true} duration={500}>Títulos</ScrollLink>
-            <Link to="/material">Material</Link>
+            <Link to="/disciplinas">Disciplinas</Link>
             <Link to="/jogos">Jogos</Link>
            </nav>
            <div className="container">
@@ -127,7 +127,7 @@ function HomePage() {
         <footer className="footer">
           <aside className="sidebar">
               <div className="socialMedia">
-                <a href="https://www.facebook.com/cofradia.academica.1" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.facebook.com/icmam" target="_blank" rel="noopener noreferrer">
                   <FaFacebook size={40} className="socialIcon" />
                 </a>
                 <a href="https://www.instagram.com/icmam_math_conference?igsh=eWx2M3FlYWxucTJ0" target="_blank" rel="noopener noreferrer">

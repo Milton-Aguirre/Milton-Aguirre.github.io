@@ -2,7 +2,8 @@ import React from 'react';
 import { FaFacebook, FaInstagram, FaYoutube, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-import EightPuzzle from '../puzzles/rachaCuca.jsx';
+import Puzzle8 from '../puzzles/rachaCuca.jsx';
+import HanoiGame from '../puzzles/hanoiTower.jsx';
 
 export default function PuzzlesPage() {
   return (
@@ -20,7 +21,7 @@ export default function PuzzlesPage() {
 
         <nav className="nav">
           <Link to="/">Home</Link>
-          <Link to="/material">Material</Link>
+          <Link to="/disciplinas">Disciplinas</Link>
           <Link to="/jogos">Jogos</Link>
         </nav>
 
@@ -28,20 +29,30 @@ export default function PuzzlesPage() {
           <h2 className='subSectionTitle'>Racha Cuca</h2>
             <div className="nColumnSection">
               <div className="rightColumnEvents">
-                <EightPuzzle />
+                <Puzzle8 />
               </div>
               <div className="leftColumnEvents">
-                <p>Este jogo consiste em mover uma peça por vez para o espaço em branco, com o objetivo de 
-                  organizar os números em ordem crescente.
-                </p>
+                <p>Regra: deslocar uma peça vertical ou horizontalmente para o espaço em branco.</p>
+                <p>Objetivo: organizar os números em ordem crescente, começando no canto superior esquerdo.</p>
               </div>
-            </div>      
+            </div>   
+
+          <h2 className='subSectionTitle'>Torres de Hanoi</h2>
+            <div className="nColumnSection">
+              <div className="rightColumnEvents">
+                <HanoiGame />
+              </div>
+              <div className="leftColumnEvents">
+                <p>Regra: Um disco maior nunca pode ficar sobre um menor.</p>
+                <p>Objetivo: mover todos os discos da torre A para a torre C, usando a torre B como auxiliar.</p>
+              </div>
+            </div>   
           
 
         <footer className="footer">
           <aside className="sidebar">
             <div className="socialMedia">
-              <a href="https://www.facebook.com/cofradia.academica.1" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/icmam" target="_blank" rel="noopener noreferrer">
                 <FaFacebook size={40} className="socialIcon" />
               </a>
               <a href="https://www.instagram.com/icmam_math_conference?igsh=eWx2M3FlYWxucTJ0" target="_blank" rel="noopener noreferrer">
