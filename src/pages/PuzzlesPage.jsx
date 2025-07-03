@@ -2,7 +2,7 @@ import React from 'react';
 import { FaFacebook, FaInstagram, FaYoutube, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-import Puzzle8 from '../puzzles/rachaCuca.jsx';
+import RachaCuca from '../puzzles/rachaCuca.jsx';
 import HanoiGame from '../puzzles/hanoiTower.jsx';
 
 export default function PuzzlesPage() {
@@ -29,7 +29,7 @@ export default function PuzzlesPage() {
           <h2 className='subSectionTitle'>Racha Cuca</h2>
             <div className="nColumnSection">
               <div className="rightColumnEvents">
-                <Puzzle8 />
+                <RachaCuca />
               </div>
               <div className="leftColumnEvents">
                 <p>Regra: deslocar uma peça vertical ou horizontalmente para o espaço em branco.</p>

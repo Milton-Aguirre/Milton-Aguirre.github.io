@@ -41,7 +41,6 @@ const HanoiGame = () => {
 
   return (
     <div className="hanoi-game">
-      <h2>Torres de Hanoi</h2>
       <p>Movimentos: {moveCount}</p>
       {isWin && <p className="win-text">🏆 Parabéns! Você venceu!</p>}
 

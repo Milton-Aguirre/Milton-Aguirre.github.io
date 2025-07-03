@@ -1,8 +1,9 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
+import './RachaCuca.css';
 
 const TAMANHO = 300;
 const TAMANHO_CELULA = TAMANHO / 3;
-const DURACAO_ANIMACAO = 200; // ms
+const DURACAO_ANIMACAO = 200;
 
 const movimentos = ['cima', 'baixo', 'esquerda', 'direita'];
 
@@ -27,7 +28,7 @@ function heuristica(estado) {
     const val = estado[i];
     if (val === 0) continue;
     const [x1, y1] = [i % 3, Math.floor(i / 3)];
-    const [x2, y2] = [((val - 1) % 3), Math.floor((val - 1) / 3)];
+    const [x2, y2] = [(val - 1) % 3, Math.floor((val - 1) / 3)];
     d += Math.abs(x1 - x2) + Math.abs(y1 - y2);
   }
   return d;
@@ -75,7 +76,7 @@ function resolverAEstrela(inicial) {
   return null;
 }
 
-export default function Puzzle8() {
+export default function RachaCuca() {
   const canvasRef = useRef(null);
   const somClique = useRef(null);
   const somVitoria = useRef(null);
@@ -117,14 +118,14 @@ export default function Puzzle8() {
       }
     }
 
-    if (vitoria) {
-      ctx.fillStyle = 'rgba(116, 177, 186, 0.8)';
-      ctx.fillRect(0, TAMANHO / 3, TAMANHO, TAMANHO_CELULA);
-      ctx.fillStyle = 'white';
-      ctx.font = '28px Arial';
-      ctx.textAlign = 'center';
-      ctx.fillText('VOCÊ VENCEU!', TAMANHO / 2, TAMANHO / 2);
-    }
+    // if (vitoria) {
+    //   ctx.fillStyle = 'rgba(116, 177, 186, 0.8)';
+    //   ctx.fillRect(0, TAMANHO / 3, TAMANHO, TAMANHO_CELULA);
+    //   ctx.fillStyle = 'white';
+    //   ctx.font = '28px Arial';
+    //   ctx.textAlign = 'center';
+    //   ctx.fillText('VOCÊ VENCEU!', TAMANHO / 2, TAMANHO / 2);
+    // }
   }, [vitoria]);
 
   useEffect(() => {
@@ -146,8 +147,8 @@ export default function Puzzle8() {
           setVitoria(true);
           if (somVitoria.current) {
             somVitoria.current.play();
-          };
-        };
+          }
+        }
       });
     }
   };
@@ -170,7 +171,7 @@ export default function Puzzle8() {
       const y = yi + (yf - yi) * progresso;
 
       desenharTabuleiro(estado, { valor: val, x, y });
-            
+
       if (progresso < 1) {
         requestAnimationFrame(animar);
       } else {
@@ -202,7 +203,7 @@ export default function Puzzle8() {
     if (caminho) {
       setCaminho(caminho);
       setPasso(0);
-    }  
+    }
   };
 
   useEffect(() => {
@@ -218,30 +219,26 @@ export default function Puzzle8() {
           if (somVitoria.current) {
             somVitoria.current.play();
           }
-        };    
+        }
       });
     }
   }, [caminho, passo, tabuleiro, animando, animarMovimento]);
 
   return (
-    <div>
+    <div className="container-jogo">
+      {vitoria && <p className="win-text">🏆 Parabéns! Você venceu!</p>}
       <canvas
         ref={canvasRef}
         width={TAMANHO}
         height={TAMANHO}
         onClick={handleClick}
-        style={{ border: '1px solid black', marginBottom: '10px' }}
+        className="canvas-jogo"
       />
-      <div style={{ display: 'flex', gap: '10px' }}>
+      
       <div className="botoes-jogo">
-        <button
-          className="botao-jogo"
-          onClick={resolver}
-          disabled={vitoria || animando}
-        >
+        <button className="botao-jogo" onClick={resolver} disabled={vitoria || animando}>
           Resolver
         </button>
-
         <button
           className="botao-jogo"
           onClick={() => {
@@ -254,7 +251,6 @@ export default function Puzzle8() {
         >
           Novo jogo
         </button>
-      </div>
       </div>
     </div>
   );
