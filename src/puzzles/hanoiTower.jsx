@@ -42,7 +42,7 @@ const HanoiGame = () => {
   return (
     <div className="hanoi-game">
       <p>Movimentos: {moveCount}</p>
-      {isWin && <p className="win-text">🏆 Parabéns! Você venceu!</p>}
+      {isWin && <p className="win-text">Parabéns! Você venceu!</p>}
 
       <div className="towers-container">
         {towers.map((tower, i) => (
