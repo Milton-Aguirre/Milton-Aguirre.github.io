@@ -226,7 +226,7 @@ export default function RachaCuca() {
 
   return (
     <div className="container-jogo">
-      {vitoria && <p className="win-text">🏆 Parabéns! Você venceu!</p>}
+      {vitoria && <p className="win-text">Parabéns! Você venceu!</p>}
       <canvas
         ref={canvasRef}
         width={TAMANHO}
