@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaFacebook, FaInstagram, FaYoutube, FaLinkedin, FaGithub } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 import RachaCuca from '../puzzles/rachaCuca.jsx';
 import HanoiGame from '../puzzles/hanoiTower.jsx';
