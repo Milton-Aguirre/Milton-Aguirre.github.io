@@ -68,7 +68,7 @@
 }
 
 /* ################################################################################################################ */
-/* O seguinte código estiliza os componentes do site para telas tipo moitor.*/
+/* O seguinte código estiliza os componentes do site para telas tipo monitor.*/
 /* ################################################################################################################ */
 
 /* ################################################################################################################ */
@@ -119,8 +119,6 @@
   display: flex;
   justify-content: space-around;
 }
-
-
 
 /* ################################################################################################################ */
 /* Estiliza o corpo do site */
@@ -394,7 +392,8 @@ html, body, #root {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  min-height: 50vh;
+  padding: 2em 0;
 }
 form { /* controla o formato do texto fora das caixas */
   display: flex;
@@ -404,8 +403,7 @@ form { /* controla o formato do texto fora das caixas */
   gap: 10px; /* Adiciona espaçamento entre os elementos */
 }
 input { /* controla a apariência das caixas Nome e Email */
-  width: 60vw;
-  min-width: 12rem;
+  width: clamp(240px, 50vw, 480px);
   height: 50px;
   margin: 10px auto;
   padding: 20px;
@@ -423,8 +421,8 @@ input { /* controla a apariência das caixas Nome e Email */
   outline: none;
   box-shadow: 0 5px 10px rgba(170, 0, 255, 0.2);
 } */
-button { /* controla o estilo e as propiedades do botão */ 
-  width: 60vw;
+button { /* controla o estilo e as propiedades do botão */
+  width: clamp(240px, 50vw, 480px);
   margin-top: 0rem;
   padding: 6px;
   font-size: 1rem;
@@ -442,7 +440,7 @@ button:hover { /* Cor mais clara ao passar o mouse */
   /* box-shadow: 9px 9px 19px #bceed2, -9px -9px 19px #f7f9f8;*/
 }
 textarea { /* controla o estilo da caixa da Menssagem */
-  min-width: 60vw;
+  width: clamp(240px, 50vw, 480px);
   margin: 10px auto;
   padding: 20px;
   border: none;
