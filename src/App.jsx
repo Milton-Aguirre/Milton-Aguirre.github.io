@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router';
 
 import HomePage from './pages/HomePage.jsx';
 import DisciplinasPage from './pages/DisciplinasPage.jsx';

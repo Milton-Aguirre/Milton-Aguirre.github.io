@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaFacebook, FaInstagram, FaYoutube, FaLinkedin, FaGithub } from 'react-icons/fa';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router';
 
 const socialLinks = [
   { label: 'LinkedIn de Milton Aguirre', url: 'https://www.linkedin.com/in/milton-aguirre-mat-52300751/', Icon: FaLinkedin },
