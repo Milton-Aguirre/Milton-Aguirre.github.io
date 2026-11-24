@@ -3,6 +3,7 @@ import { FaExternalLinkAlt } from 'react-icons/fa';
 
 import Section from './Section.jsx';
 import { card, link } from './styles.js';
+import { useI18n } from '../i18n/index.js';
 
 const upcomingEvents = [
   { name: 'ISAACS Congress 2029', url: 'https://isaacmath.org/' },
@@ -36,20 +37,13 @@ const EventList = ({ title, intro, events, badge }) => (
 );
 
 const Events = () => {
+  const { t } = useI18n();
+
   return (
-    <Section id="eventos" title="Eventos">
+    <Section id="eventos" title={t.events.title}>
       <div className="grid gap-6 md:grid-cols-2">
-        <EventList
-          title="Próximos"
-          badge="Em breve"
-          intro="Eventos matemáticos que serão realizados em breve."
-          events={upcomingEvents}
-        />
-        <EventList
-          title="Histórico"
-          intro="Eventos realizados nos últimos anos."
-          events={pastEvents}
-        />
+        <EventList title={t.events.upcoming} badge={t.pdf.soon} intro={t.events.upcomingIntro} events={upcomingEvents} />
+        <EventList title={t.events.past} intro={t.events.pastIntro} events={pastEvents} />
       </div>
     </Section>
   );

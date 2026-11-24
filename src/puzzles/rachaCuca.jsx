@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 
 import { button } from '../components/styles.js';
+import { useI18n } from '../i18n/index.js';
 
 const TAMANHO = 300;
 const TAMANHO_CELULA = TAMANHO / 3;
@@ -78,6 +79,8 @@ function resolverAEstrela(inicial) {
 }
 
 export default function RachaCuca() {
+  const { t } = useI18n();
+  const p = t.games.puzzle;
   const canvasRef = useRef(null);
   const somClique = useRef(null);
   const somVitoria = useRef(null);
@@ -225,20 +228,20 @@ export default function RachaCuca() {
   return (
     <div className="flex w-full flex-col items-center gap-4">
       <p className="min-h-6 text-center font-semibold text-emerald-700" role="status">
-        {vitoria ? 'Parabéns! Você venceu!' : ''}
+        {vitoria ? t.games.win : ''}
       </p>
       <canvas
         ref={canvasRef}
         width={TAMANHO}
         height={TAMANHO}
         onClick={handleClick}
-        aria-label="Tabuleiro do Racha Cuca"
+        aria-label={p.board}
         className="aspect-square w-full max-w-[300px] cursor-pointer rounded-xl bg-slate-100 ring-1 ring-slate-200"
       />
 
       <div className="flex gap-3">
         <button type="button" className={button} onClick={resolver} disabled={vitoria || animando}>
-          Resolver
+          {p.solve}
         </button>
         <button
           type="button"
@@ -251,7 +254,7 @@ export default function RachaCuca() {
             setVitoria(false);
           }}
         >
-          Novo jogo
+          {p.newGame}
         </button>
       </div>
     </div>
