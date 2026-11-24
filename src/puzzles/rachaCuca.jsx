@@ -178,12 +178,12 @@ export default function RachaCuca() {
         setAnimando(false);
         callback();
       }
-      if (somClique.current) {
-        somClique.current.currentTime = 0.01;
-        somClique.current.play();
-      }
     };
 
+    if (somClique.current) {
+      somClique.current.currentTime = 0.01;
+      somClique.current.play().catch(() => {});
+    }
     requestAnimationFrame(animar);
   }, [desenharTabuleiro]);
 

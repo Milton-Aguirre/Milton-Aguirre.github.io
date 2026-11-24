@@ -15,8 +15,9 @@ const Project = ({ title, institution, description, imgSrc, pdfUrl, onOpen  }) =
         type="button" 
         className="buttonPDF"
         onClick={() => onOpen(pdfUrl)}
+        disabled={!pdfUrl}
       >
-        Visualizar PDF
+        {pdfUrl ? 'Visualizar PDF' : 'Em breve'}
       </button>
     </div>
   );

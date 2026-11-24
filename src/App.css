@@ -355,6 +355,13 @@ html, body, #root {
   color: #ffffff;
   /*box-shadow: 9px 9px 19px #e1ac44;*/
 }
+.buttonPDF:disabled,
+.buttonPDF:disabled:hover {
+  background: #c8ced4;
+  color: #5f6b76;
+  cursor: not-allowed;
+  box-shadow: none;
+}
 
 /* ################################################################################################################ */
 /* Estiliza a janela flutuante de visualização de PDFs */

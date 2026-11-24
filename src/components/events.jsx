@@ -33,7 +33,7 @@ const EventSection = ({ title, events }) => (
       </div>
       <div className="rightColumnEvents">
         <img
-          src={`${process.env.PUBLIC_URL}/Logo_site_192.png`}
+          src="/Logo_site_192.png"
           width="200"
           height="200"
           alt="Logo Pessoal"

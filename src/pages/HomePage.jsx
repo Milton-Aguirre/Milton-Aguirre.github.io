@@ -64,7 +64,7 @@ function HomePage() {
                      <div className="leftColumnEvents">
                        <p>A seguir encontrará uma lista de eventos matemáticos que serão realizados próximamente.</p>
                        <ul className="linksEvents">
-                         <li><a className="link" href="https://isaacmath.org/" target="_blank" onClick={(e) => e.preventDefault()}>
+                         <li><a className="link" href="https://isaacmath.org/" target="_blank" rel="noopener noreferrer">
                                ISAACS Congress 2029
                              </a>
                          </li>
