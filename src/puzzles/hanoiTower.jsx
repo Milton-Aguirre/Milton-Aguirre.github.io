@@ -1,70 +1,109 @@
 import React, { useState } from 'react';
-import './HanoiGame.css';
+
+import { button } from '../components/styles.js';
+
+const NOMES = ['A', 'B', 'C'];
+
+const inicial = (n) => [Array.from({ length: n }, (_, i) => n - i), [], []];
 
 const HanoiGame = () => {
-  const [towers, setTowers] = useState([[3, 2, 1], [], []]);
+  const [discos, setDiscos] = useState(3);
+  const [towers, setTowers] = useState(() => inicial(3));
   const [selectedTower, setSelectedTower] = useState(null);
   const [moveCount, setMoveCount] = useState(0);
 
+  const isWin = towers[2].length === discos;
+  const minimo = 2 ** discos - 1;
+
   const handleTowerClick = (towerIndex) => {
+    if (isWin) return;
     if (selectedTower === null) {
       if (towers[towerIndex].length === 0) return;
       setSelectedTower(towerIndex);
-    } else {
-      if (towerIndex === selectedTower) {
-        setSelectedTower(null);
-        return;
-      }
-
-      const newTowers = towers.map(t => [...t]);
-      const diskToMove = newTowers[selectedTower].pop();
-      const destination = newTowers[towerIndex];
-      const topDisk = destination[destination.length - 1];
-
-      if (!topDisk || diskToMove < topDisk) {
-        destination.push(diskToMove);
-        setTowers(newTowers);
-        setMoveCount(moveCount + 1);
-      }
-
-      setSelectedTower(null);
+      return;
     }
+    if (towerIndex === selectedTower) {
+      setSelectedTower(null);
+      return;
+    }
+
+    const origem = towers[selectedTower];
+    const destino = towers[towerIndex];
+    const disco = origem[origem.length - 1];
+    const topo = destino[destino.length - 1];
+
+    if (topo === undefined || disco < topo) {
+      const novas = towers.map((t) => [...t]);
+      novas[towerIndex].push(novas[selectedTower].pop());
+      setTowers(novas);
+      setMoveCount((c) => c + 1);
+    }
+    setSelectedTower(null);
   };
 
-  const resetGame = () => {
-    setTowers([[3, 2, 1], [], []]);
+  const reiniciar = (n = discos) => {
+    setDiscos(n);
+    setTowers(inicial(n));
     setMoveCount(0);
     setSelectedTower(null);
   };
 
-  const isWin = towers[2].length === 3;
-
   return (
-    <div className="hanoi-game">
-      <p>Movimentos: {moveCount}</p>
-      {isWin && <p className="win-text">Parabéns! Você venceu!</p>}
-
-      <div className="towers-container">
-        {towers.map((tower, i) => (
-          <div
-            key={i}
-            className={`tower ${selectedTower === i ? 'selected' : ''}`}
-            onClick={() => handleTowerClick(i)}
+    <div className="flex w-full flex-col items-center gap-4">
+      <div className="flex w-full flex-wrap items-center justify-between gap-2 text-sm text-slate-700">
+        <label className="flex items-center gap-2">
+          Discos:
+          <select
+            value={discos}
+            onChange={(e) => reiniciar(Number(e.target.value))}
+            className="rounded-md border border-slate-300 bg-white px-2 py-1"
           >
-            {tower.map((disk, j) => (
-              <div
-                key={j}
-                className="disk"
-                style={{ width: `${disk * 30}px` }}
+            {[3, 4, 5, 6].map((n) => (
+              <option key={n} value={n}>{n}</option>
+            ))}
+          </select>
+        </label>
+        <span>
+          Movimentos: <strong>{moveCount}</strong> · mínimo: {minimo}
+        </span>
+      </div>
+
+      <p className="min-h-6 text-center font-semibold text-emerald-700" role="status">
+        {isWin && (moveCount === minimo ? 'Perfeito! Você venceu com o mínimo de movimentos!' : 'Parabéns! Você venceu!')}
+      </p>
+
+      <div className="grid w-full grid-cols-3 gap-3">
+        {towers.map((tower, i) => (
+          <button
+            key={NOMES[i]}
+            type="button"
+            onClick={() => handleTowerClick(i)}
+            aria-label={`Torre ${NOMES[i]}, ${tower.length} disco(s)${selectedTower === i ? ', selecionada' : ''}`}
+            aria-pressed={selectedTower === i}
+            className={`relative flex h-52 flex-col-reverse items-center gap-1 rounded-xl bg-slate-100 px-1 pt-2 pb-8 ring-2 transition ${
+              selectedTower === i ? 'ring-clay' : 'ring-transparent hover:ring-slate-300'
+            }`}
+          >
+            <span className="absolute left-1/2 bottom-8 top-3 w-1.5 -translate-x-1/2 rounded-full bg-slate-300" aria-hidden="true" />
+            <span className="absolute bottom-1.5 text-xs font-bold text-slate-500" aria-hidden="true">{NOMES[i]}</span>
+            {tower.map((disk) => (
+              <span
+                key={disk}
+                className={`relative z-10 flex h-6 items-center justify-center rounded-md text-xs font-bold text-white shadow-sm transition-colors duration-500 ${
+                  isWin ? 'bg-clay' : 'bg-brand'
+                }`}
+                style={{ width: `${30 + (disk / discos) * 70}%` }}
               >
                 {disk}
-              </div>
+              </span>
             ))}
-          </div>
+          </button>
         ))}
       </div>
 
-      <button onClick={resetGame}>Reiniciar</button>
+      <button type="button" className={button} onClick={() => reiniciar()}>
+        Reiniciar
+      </button>
     </div>
   );
 };
