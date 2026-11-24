@@ -2,10 +2,12 @@ import React, { useEffect, useRef } from 'react';
 import { FaTimes } from 'react-icons/fa';
 
 import { link } from './styles.js';
+import { useI18n } from '../i18n/index.js';
 
 // Janela flutuante para visualizar PDFs.
 // Fecha com o botão ×, com a tecla Esc ou clicando fora do conteúdo.
 export default function PdfModal({ url, onClose }) {
+  const { t } = useI18n();
   const closeRef = useRef(null);
 
   useEffect(() => {
@@ -24,21 +26,21 @@ export default function PdfModal({ url, onClose }) {
         className="relative w-full max-w-4xl rounded-2xl bg-white p-4 pt-12 shadow-xl"
         role="dialog"
         aria-modal="true"
-        aria-label="Visualização de PDF"
+        aria-label={t.pdf.dialog}
         onClick={(e) => e.stopPropagation()}
       >
         <button
           ref={closeRef}
           type="button"
           onClick={onClose}
-          aria-label="Fechar"
+          aria-label={t.pdf.close}
           className="absolute top-2 right-2 flex size-9 items-center justify-center rounded-full text-slate-600 hover:bg-slate-100"
         >
           <FaTimes aria-hidden="true" />
         </button>
-        <iframe src={url} title="Arquivo PDF" className="h-[70vh] w-full rounded-lg border border-slate-200" />
+        <iframe src={url} title={t.pdf.frame} className="h-[70vh] w-full rounded-lg border border-slate-200" />
         <a className={`${link} mt-3 inline-block text-sm`} href={url} target="_blank" rel="noopener noreferrer">
-          Abrir em nova aba
+          {t.pdf.newTab}
         </a>
       </div>
     </div>

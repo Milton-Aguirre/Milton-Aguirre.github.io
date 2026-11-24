@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 
 import { button } from '../components/styles.js';
+import { useI18n } from '../i18n/index.js';
 
 const NOMES = ['A', 'B', 'C'];
 
 const inicial = (n) => [Array.from({ length: n }, (_, i) => n - i), [], []];
 
 const HanoiGame = () => {
+  const { t } = useI18n();
+  const h = t.games.hanoi;
   const [discos, setDiscos] = useState(3);
   const [towers, setTowers] = useState(() => inicial(3));
   const [selectedTower, setSelectedTower] = useState(null);
@@ -52,7 +55,7 @@ const HanoiGame = () => {
     <div className="flex w-full flex-col items-center gap-4">
       <div className="flex w-full flex-wrap items-center justify-between gap-2 text-sm text-slate-700">
         <label className="flex items-center gap-2">
-          Discos:
+          {h.disks}
           <select
             value={discos}
             onChange={(e) => reiniciar(Number(e.target.value))}
@@ -64,12 +67,12 @@ const HanoiGame = () => {
           </select>
         </label>
         <span>
-          Movimentos: <strong>{moveCount}</strong> · mínimo: {minimo}
+          {h.moves} <strong>{moveCount}</strong> · {h.minimum} {minimo}
         </span>
       </div>
 
       <p className="min-h-6 text-center font-semibold text-emerald-700" role="status">
-        {isWin && (moveCount === minimo ? 'Perfeito! Você venceu com o mínimo de movimentos!' : 'Parabéns! Você venceu!')}
+        {isWin && (moveCount === minimo ? h.perfect : t.games.win)}
       </p>
 
       <div className="grid w-full grid-cols-3 gap-3">
@@ -78,7 +81,7 @@ const HanoiGame = () => {
             key={NOMES[i]}
             type="button"
             onClick={() => handleTowerClick(i)}
-            aria-label={`Torre ${NOMES[i]}, ${tower.length} disco(s)${selectedTower === i ? ', selecionada' : ''}`}
+            aria-label={h.tower(NOMES[i], tower.length, selectedTower === i)}
             aria-pressed={selectedTower === i}
             className={`relative flex h-52 flex-col-reverse items-center gap-1 rounded-xl bg-slate-100 px-1 pt-2 pb-8 ring-2 transition ${
               selectedTower === i ? 'ring-clay' : 'ring-transparent hover:ring-slate-300'
@@ -102,7 +105,7 @@ const HanoiGame = () => {
       </div>
 
       <button type="button" className={button} onClick={() => reiniciar()}>
-        Reiniciar
+        {t.games.reset}
       </button>
     </div>
   );
