@@ -1,4 +1,8 @@
 import React from 'react';
+import { FaExternalLinkAlt } from 'react-icons/fa';
+
+import Section from './Section.jsx';
+import { card, link } from './styles.js';
 
 const upcomingEvents = [
   { name: 'ISAACS Congress 2029', url: 'https://isaacmath.org/' },
@@ -11,44 +15,43 @@ const pastEvents = [
   { name: 'ISAACS-ICMAM Conference for Women in Mathematics 2024', url: 'https://sites.google.com/view/isaac-icmam-conference-4-women/' },
 ];
 
-const EventList = ({ title, intro, events }) => (
-  <div>
-    <h3 className="subSectionTitle">{title}</h3>
-    <div className="nColumnSection">
-      <div className="leftColumnEvents">
-        <p>{intro}</p>
-        <ul className="linksEvents">
-          {events.map((event) => (
-            <li key={event.name}>
-              <a className="link" href={event.url} target="_blank" rel="noopener noreferrer">
-                {event.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="rightColumnEvents">
-        <img src="/Logo_site_192.png" width="200" height="200" alt="" className="Logo_site_192" loading="lazy" />
-      </div>
-    </div>
+const EventList = ({ title, intro, events, badge }) => (
+  <div className={`${card} p-6`}>
+    <h3 className="flex items-center gap-2 text-lg font-semibold text-slate-900">
+      {title}
+      {badge && <span className="rounded-full bg-amber-100 px-2 py-0.5 text-xs font-medium text-amber-800">{badge}</span>}
+    </h3>
+    <p className="mt-1 text-sm text-slate-600">{intro}</p>
+    <ul className="mt-4 space-y-2">
+      {events.map((event) => (
+        <li key={event.name}>
+          <a className={`${link} inline-flex items-start gap-2`} href={event.url} target="_blank" rel="noopener noreferrer">
+            <FaExternalLinkAlt className="mt-1 shrink-0 text-xs opacity-60" aria-hidden="true" />
+            {event.name}
+          </a>
+        </li>
+      ))}
+    </ul>
   </div>
 );
 
 const Events = () => {
   return (
-    <section id="events">
-      <h2 className="sectionTitle">Eventos</h2>
-      <EventList
-        title="Próximos"
-        intro="A seguir, uma lista de eventos matemáticos que serão realizados em breve."
-        events={upcomingEvents}
-      />
-      <EventList
-        title="Histórico"
-        intro="Histórico de eventos realizados nos últimos anos."
-        events={pastEvents}
-      />
-    </section>
+    <Section id="eventos" title="Eventos">
+      <div className="grid gap-6 md:grid-cols-2">
+        <EventList
+          title="Próximos"
+          badge="Em breve"
+          intro="Eventos matemáticos que serão realizados em breve."
+          events={upcomingEvents}
+        />
+        <EventList
+          title="Histórico"
+          intro="Eventos realizados nos últimos anos."
+          events={pastEvents}
+        />
+      </div>
+    </Section>
   );
 };
 

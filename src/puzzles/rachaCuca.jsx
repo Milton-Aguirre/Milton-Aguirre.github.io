@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
-import './RachaCuca.css';
+
+import { button } from '../components/styles.js';
 
 const TAMANHO = 300;
 const TAMANHO_CELULA = TAMANHO / 3;
@@ -87,11 +88,12 @@ export default function RachaCuca() {
   const [vitoria, setVitoria] = useState(false);
 
   useEffect(() => {
-    somClique.current = new Audio('/sounds/clickV2.wav');
-    somVitoria.current = new Audio('/sounds/win.wav');
+    somClique.current = new Audio('/sounds/clickV2.mp3');
+    somVitoria.current = new Audio('/sounds/win.mp3');
   }, []);
 
-  const desenharTabuleiro = useCallback((estado, animacao = null) => {
+  // venceu = true pinta as peças de laranja (cor de destaque do site)
+  const desenharTabuleiro = useCallback((estado, animacao = null, venceu = false) => {
     const ctx = canvasRef.current.getContext('2d');
     ctx.clearRect(0, 0, TAMANHO, TAMANHO);
 
@@ -108,29 +110,24 @@ export default function RachaCuca() {
       }
 
       if (val !== 0) {
-        ctx.strokeStyle = 'gray';
-        ctx.strokeRect(x, y, TAMANHO_CELULA, TAMANHO_CELULA);
-        ctx.font = '30px Arial';
-        ctx.fillStyle = 'black';
+        // Peça com cantos arredondados nas cores do site
+        const m = 4;
+        ctx.fillStyle = venceu ? '#be6f44' : '#486a6e';
+        ctx.beginPath();
+        ctx.roundRect(x + m, y + m, TAMANHO_CELULA - 2 * m, TAMANHO_CELULA - 2 * m, 10);
+        ctx.fill();
+        ctx.font = 'bold 34px system-ui, sans-serif';
+        ctx.fillStyle = '#ffffff';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText(val, x + TAMANHO_CELULA / 2, y + TAMANHO_CELULA / 2);
       }
     }
-
-    // if (vitoria) {
-    //   ctx.fillStyle = 'rgba(116, 177, 186, 0.8)';
-    //   ctx.fillRect(0, TAMANHO / 3, TAMANHO, TAMANHO_CELULA);
-    //   ctx.fillStyle = 'white';
-    //   ctx.font = '28px Arial';
-    //   ctx.textAlign = 'center';
-    //   ctx.fillText('VOCÊ VENCEU!', TAMANHO / 2, TAMANHO / 2);
-    // }
   }, []);
 
   useEffect(() => {
-    desenharTabuleiro(tabuleiro);
-  }, [tabuleiro, desenharTabuleiro]);
+    desenharTabuleiro(tabuleiro, null, vitoria);
+  }, [tabuleiro, vitoria, desenharTabuleiro]);
 
   const moverSeValido = (idx) => {
     if (animando || caminho.length > 0) return;
@@ -189,9 +186,10 @@ export default function RachaCuca() {
 
   const handleClick = (e) => {
     if (vitoria || animando) return;
+    // O canvas encolhe em telas pequenas: converte a posição do clique para a escala interna (300px)
     const rect = canvasRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const x = ((e.clientX - rect.left) * TAMANHO) / rect.width;
+    const y = ((e.clientY - rect.top) * TAMANHO) / rect.height;
     const coluna = Math.floor(x / TAMANHO_CELULA);
     const linha = Math.floor(y / TAMANHO_CELULA);
     moverSeValido(linha * 3 + coluna);
@@ -225,22 +223,26 @@ export default function RachaCuca() {
   }, [caminho, passo, tabuleiro, animando, animarMovimento]);
 
   return (
-    <div className="container-jogo">
-      {vitoria && <p className="win-text">Parabéns! Você venceu!</p>}
+    <div className="flex w-full flex-col items-center gap-4">
+      <p className="min-h-6 text-center font-semibold text-emerald-700" role="status">
+        {vitoria ? 'Parabéns! Você venceu!' : ''}
+      </p>
       <canvas
         ref={canvasRef}
         width={TAMANHO}
         height={TAMANHO}
         onClick={handleClick}
-        className="canvas-jogo"
+        aria-label="Tabuleiro do Racha Cuca"
+        className="aspect-square w-full max-w-[300px] cursor-pointer rounded-xl bg-slate-100 ring-1 ring-slate-200"
       />
-      
-      <div className="botoes-jogo">
-        <button className="botao-jogo" onClick={resolver} disabled={vitoria || animando}>
+
+      <div className="flex gap-3">
+        <button type="button" className={button} onClick={resolver} disabled={vitoria || animando}>
           Resolver
         </button>
         <button
-          className="botao-jogo"
+          type="button"
+          className={button}
           onClick={() => {
             const novo = gerarTabuleiroSolucionavel();
             setTabuleiro(novo);

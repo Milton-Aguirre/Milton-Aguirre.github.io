@@ -1,12 +1,34 @@
-# React + Vite
+# Milton Aguirre · site pessoal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Site pessoal publicado em <https://milton-aguirre.github.io/>: biografia, eventos da ICMAM, trabalhos acadêmicos, disciplinas e jogos matemáticos.
 
-Currently, two official plugins are available:
+Feito com React 19, Vite, React Router e Tailwind CSS v4.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Rodando localmente
 
-## Expanding the ESLint configuration
+```bash
+npm install
+npm run dev       # servidor de desenvolvimento em http://localhost:5173
+npm run lint      # verifica o código
+npm run build     # gera o site em dist/
+npm run preview   # serve o build de dist/ para conferir antes de publicar
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Deploy
+
+O deploy é automático: cada push na `main` roda o workflow `.github/workflows/deploy.yml`, que faz lint, build e publica no GitHub Pages. Pull requests para a `main` rodam só lint e build.
+
+O build gera também um `404.html` (cópia do `index.html`), para que as rotas `/disciplinas` e `/jogos` funcionem ao recarregar a página.
+
+## Onde editar
+
+| O quê | Arquivo |
+|---|---|
+| Cabeçalho, menu e rodapé (redes sociais) | `src/components/Layout.jsx` |
+| Biografia | `src/components/biography.jsx` |
+| Eventos | `src/components/events.jsx` |
+| Links | `src/components/links.jsx` |
+| Títulos (TCCs, dissertação) | `src/components/portfolio.jsx` |
+| Disciplinas (PDFs em `public/pdfs/`) | `src/components/disciplinas.jsx` |
+| Cores do site | `@theme` em `src/index.css` |
+| Título, descrição e prévia para redes sociais | `index.html` |

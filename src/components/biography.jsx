@@ -2,14 +2,19 @@ import React from 'react';
 
 const Biography = () => {
   return (
-    <section id="biografia" className="sectionBiografia">
-      <h2 className="sectionTitle">Biografia</h2>
-      <div className="nColumnSection">
-        <div className="imageColumn">
-          <img src="/images/Milton.jpeg" alt="Foto de Milton Aguirre" className="image" />
-        </div>
+    <section id="biografia" className="grid scroll-mt-28 items-start gap-8 md:grid-cols-[220px_1fr]">
+      <img
+        src="/images/Milton.jpeg"
+        alt="Foto de Milton Aguirre"
+        className="mx-auto aspect-square w-48 rounded-2xl object-cover shadow-lg ring-4 ring-white md:w-full"
+      />
 
-        <div className="textColumn">
+      <div>
+        <p className="text-sm font-semibold tracking-wider text-clay-dark uppercase">Biografia</p>
+        <h1 className="mt-1 text-4xl font-bold text-brand">Milton Aguirre</h1>
+        <p className="mt-1 text-lg text-slate-600">Matemático · Cientista de Dados</p>
+
+        <div className="mt-5 space-y-4 leading-relaxed text-slate-700">
           <p>
             <strong>Milton Aguirre</strong> é formado em Matemática e possui mestrado na mesma área,
             além de atuar como cientista de dados. Com um sólido background técnico,
@@ -20,7 +25,6 @@ const Biography = () => {
             problemas complexos e pela paixão por compartilhar conhecimento em sala de aula e através de
             plataformas digitais.
           </p>
-
           <p>
             Em 2020, juntou-se a seus colegas de graduação da Universidad del Valle para criar
             a International Community of Mathematicians from Latin America (ICMAM), que mais tarde se tornou

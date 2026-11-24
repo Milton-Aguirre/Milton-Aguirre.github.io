@@ -1,28 +1,8 @@
 import React, { useState } from 'react';
-import PdfModal from './PdfModal.jsx';
+import { FaFilePdf } from 'react-icons/fa';
 
-const Project = ({ title, institution, description, imgSrc, pdfUrl, onOpen }) => {
-  return (
-    <div className="cardPortfolio">
-      <div className="flex items-center gap-2 mb-2">
-        <div className="image-container">
-          <img src={imgSrc} alt={`Logo ${institution}`} loading="lazy" />
-        </div>
-        <p className="font-bold text-sm text-gray-900/75">{institution}</p>
-      </div>
-      <h4 className="text-sm font-bold mb-4">{title}</h4>
-      <h5 className="font-bold text-sm text-gray-900/75">{description}</h5>
-      <button
-        type="button"
-        className="buttonPDF"
-        onClick={() => onOpen(pdfUrl)}
-        disabled={!pdfUrl}
-      >
-        {pdfUrl ? 'Visualizar PDF' : 'Em breve'}
-      </button>
-    </div>
-  );
-};
+import PdfModal from './PdfModal.jsx';
+import { card, button } from './styles.js';
 
 const data = [
   {
@@ -47,24 +27,43 @@ const data = [
     imgSrc: '/images/Univesp.jpg',
   },
   {
-    title: 'Em desenvolvimento',
+    title: 'MBA em andamento',
     institution: 'MBA USP Esalq',
-    description: '',
+    description: 'Trabalho em desenvolvimento.',
     pdfUrl: '',
     imgSrc: '/images/MBA_USP.jpg',
   },
 ];
 
+const Project = ({ title, institution, description, imgSrc, pdfUrl, onOpen }) => (
+  <article className={`${card} flex flex-col overflow-hidden`}>
+    <div className="flex h-32 items-center justify-center border-b border-slate-100 bg-white p-4">
+      <img src={imgSrc} alt={`Logo ${institution}`} loading="lazy" className="max-h-full max-w-full object-contain" />
+    </div>
+    <div className="flex flex-1 flex-col p-5">
+      <p className="text-xs font-semibold tracking-wide text-clay-dark uppercase">{institution}</p>
+      <h3 className="mt-1 font-semibold text-slate-900">{title}</h3>
+      <p className="mt-2 flex-1 text-sm text-slate-600">{description}</p>
+      <button type="button" className={`${button} mt-4 w-full`} onClick={() => onOpen(pdfUrl)} disabled={!pdfUrl}>
+        <FaFilePdf aria-hidden="true" />
+        {pdfUrl ? 'Visualizar PDF' : 'Em breve'}
+      </button>
+    </div>
+  </article>
+);
+
 const Portfolio = () => {
   const [selectedPdf, setSelectedPdf] = useState(null);
 
   return (
-    <div className="blog grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      {data.map((item) => (
-        <Project key={item.title} {...item} onOpen={setSelectedPdf} />
-      ))}
+    <>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {data.map((item) => (
+          <Project key={item.title} {...item} onOpen={setSelectedPdf} />
+        ))}
+      </div>
       <PdfModal url={selectedPdf} onClose={() => setSelectedPdf(null)} />
-    </div>
+    </>
   );
 };
 

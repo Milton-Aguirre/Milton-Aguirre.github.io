@@ -1,57 +1,30 @@
-/* Estilos base do site. Os estilos dos componentes ficam em App.css.
-   O site tem só tema claro: o template do Vite trocava o texto para branco
-   no modo escuro do sistema, o que deixava o texto ilegível sobre o fundo claro. */
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss";
 
-  color-scheme: light;
-  color: #213547;
-  background-color: #f4f4f4;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Paleta do site (mesma identidade visual de antes).
+   Gera classes como bg-brand, text-clay-dark, ring-mint, etc. */
+@theme {
+  --color-brand: #486a6e;
+  --color-brand-dark: #355153;
+  --color-mint: #77cac3;
+  --color-clay: #be6f44;
+  --color-clay-dark: #9a4f28;
+  --color-sand: #c49249;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #747bff;
-}
-
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #f9f9f9;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus-visible,
-a:focus-visible {
-  outline: 3px solid #f99614;
-  outline-offset: 2px;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  body {
+    @apply min-w-80 bg-stone-50 text-slate-800 antialiased;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-clay);
+    outline-offset: 2px;
+  }
 }
