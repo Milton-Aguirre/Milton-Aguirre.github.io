@@ -27,7 +27,7 @@ export default function Contact() {
   return (
     <div className="form_wrapper">
       <form onSubmit={sendEmail}>
-        <label>O seu endereço de e-mail não será publicado. Campos obrigatórios são marcados com *</label>
+        <p>O seu endereço de e-mail não será publicado. Campos obrigatórios são marcados com *</p>
         <label htmlFor="user_name">Nome *</label>
         <input id="user_name" type="text" name="user_name" placeholder="Seu nome" required />
         <label htmlFor="user_email">Email *</label>

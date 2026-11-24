@@ -126,11 +126,11 @@ export default function RachaCuca() {
     //   ctx.textAlign = 'center';
     //   ctx.fillText('VOCÊ VENCEU!', TAMANHO / 2, TAMANHO / 2);
     // }
-  }, [vitoria]);
+  }, []);
 
   useEffect(() => {
     desenharTabuleiro(tabuleiro);
-  }, [tabuleiro, vitoria, desenharTabuleiro]);
+  }, [tabuleiro, desenharTabuleiro]);
 
   const moverSeValido = (idx) => {
     if (animando || caminho.length > 0) return;

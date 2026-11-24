@@ -388,10 +388,20 @@ html, body, #root {
 }
 .close {
   position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 24px;
+  top: 6px;
+  right: 10px;
+  width: auto;
+  margin: 0;
+  padding: 0 8px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  line-height: 1;
   cursor: pointer;
+}
+.modal-content .link {
+  display: inline-block;
+  margin-top: 8px;
 }
 
 /* ################################################################################################################ */
@@ -459,9 +469,9 @@ textarea { /* controla o estilo da caixa da Menssagem */
 }
 
 /* ################################################################################################################ */
-/* Controla o posicionamento da caixa de bamdeiras de visitantes */
+/* Controla o posicionamento da caixa de bandeiras de visitantes */
 
-.bamdeiras { 
+.bandeiras { 
   text-align: center;
   margin-top: 1rem;
   padding: 0.5em;

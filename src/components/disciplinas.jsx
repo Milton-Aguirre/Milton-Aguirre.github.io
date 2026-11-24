@@ -1,98 +1,54 @@
 import React, { useState } from 'react';
+import PdfModal from './PdfModal.jsx';
 
-const Card = ({ category, title, imgSrc, pdfUrl, onOpen, altText }) => {
-    return (
-      <div className="card">
-        <div className="category-container">
-          {/* {imgSrc && <img src={imgSrc} className="w-6" />} */}
-          <img src={imgSrc} className="w-6" alt={altText} />
-          <p className="font-bold text-sm text-gray-900/75">{category}</p>
-        </div>
-        <h4 className="text-sm font-bold mb-4">{title}</h4>
-        <button 
-          type="button" 
-          className="buttonPDF"
-          onClick={() => onOpen(pdfUrl)}
-          disabled={!pdfUrl}
-        >
-          {pdfUrl ? 'Visualizar PDF' : 'Em breve'}
-        </button>
+const Card = ({ category, title, imgSrc, pdfUrl, onOpen }) => {
+  return (
+    <div className="card">
+      <div className="category-container">
+        <img src={imgSrc} className="w-6" alt="" />
+        <p className="font-bold text-sm text-gray-900/75">{category}</p>
       </div>
-    );
-  };
-  
-  const Disciplinas = () => {
-    const [selectedPdf, setSelectedPdf] = useState(null);
+      <h4 className="text-sm font-bold mb-4">{title}</h4>
+      <button
+        type="button"
+        className="buttonPDF"
+        onClick={() => onOpen(pdfUrl)}
+        disabled={!pdfUrl}
+      >
+        {pdfUrl ? 'Visualizar PDF' : 'Em breve'}
+      </button>
+    </div>
+  );
+};
 
-    const data = [
-      {
-        category: "Proximamente PDF com exercicios resolvidos",
-        title: "Sistemas Dinâmicos",
-        imgSrc: "Logo_site_32.ico",
-        pdfUrl:"",
-        altText:"Matemática"
-      },
-      {
-        category: "Proximamente PDF com exercicios resolvidos",
-        title: "Teoria de Galois",
-        imgSrc: "Logo_site_32.ico",
-        pdfUrl:"",
-        altText:"Matemática"
-      },
-      {
-        category: "Proximamente PDF com exercicios resolvidos",
-        title: "Formas Diferenciais",
-        imgSrc: "Logo_site_32.ico",
-        pdfUrl:"",
-        altText:"Matemática"
-      },
-      {
-        category: "Proximamente PDF com exercicios resolvidos",
-        title: "Geometria Riemanniana",
-        imgSrc: "Logo_site_32.ico",
-        pdfUrl:"",
-        altText:"Matemática"
-      },
-      {
-        category: "Proximamente PDF com exercicios resolvidos",
-        title: "Análisis Numérico",
-        imgSrc: "Logo_site_32.ico",
-        pdfUrl:"",
-        altText:"Matemática"
-      },
-      {
-        category: "Proximamente PDF com exercicios resolvidos",
-        title: "Teoria de Grafos",
-        imgSrc: "Logo_site_32.ico",
-        pdfUrl:"",
-        altText:"Matemática"
-      },
-      {
-        category: "Proximamente PDF com exercicios resolvidos",
-        title: "Data Science e Analytics",
-        imgSrc: "Logo_site_32.ico",
-        pdfUrl:"",
-        altText:"Matemática"
-      }
-    ];
-  
-    return (
-      <div className="blog grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {data.map((item, index) => (
-          <Card key={index} {...item} onOpen={setSelectedPdf} />
-        ))}
+const EM_BREVE = 'Em breve: PDF com exercícios resolvidos';
 
-        {selectedPdf && (
-        <div className="modal">
-          <div className="modal-content">
-            <span className="close" onClick={() => setSelectedPdf(null)}>&times;</span>
-            <iframe src={selectedPdf} title="Arquivo PDF" width="100%" height="500px" />
-          </div>
-        </div>
-      )}
-      </div>
-    );
-  };
-  
-  export default Disciplinas;
-  
+// Para publicar um PDF, coloque o arquivo em public/pdfs/ e preencha pdfUrl.
+const data = [
+  { title: 'Sistemas Dinâmicos', pdfUrl: '' },
+  { title: 'Teoria de Galois', pdfUrl: '' },
+  { title: 'Formas Diferenciais', pdfUrl: '' },
+  { title: 'Geometria Riemanniana', pdfUrl: '' },
+  { title: 'Análise Numérica', pdfUrl: '' },
+  { title: 'Teoria dos Grafos', pdfUrl: '' },
+  { title: 'Data Science e Analytics', pdfUrl: '' },
+].map((d) => ({
+  ...d,
+  category: d.pdfUrl ? 'PDF com exercícios resolvidos' : EM_BREVE,
+  imgSrc: '/Logo_site_32.ico',
+}));
+
+const Disciplinas = () => {
+  const [selectedPdf, setSelectedPdf] = useState(null);
+
+  return (
+    <div className="blog grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {data.map((item) => (
+        <Card key={item.title} {...item} onOpen={setSelectedPdf} />
+      ))}
+      <PdfModal url={selectedPdf} onClose={() => setSelectedPdf(null)} />
+    </div>
+  );
+};
+
+export default Disciplinas;
