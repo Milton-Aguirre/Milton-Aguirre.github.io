@@ -20,16 +20,16 @@ const nav = [
 
 const navItem = 'rounded-md px-3 py-1.5 text-sm font-medium text-white/90 transition hover:bg-white/10 hover:text-white';
 
-export default function Layout({ children }) {
+export default function Layout({ children, title, description }) {
   const { t, lang, htmlLang, page, to } = useI18n();
   const { pathname } = useLocation();
 
   // Atualiza o idioma do documento e o título da aba ao trocar de idioma
   useEffect(() => {
     document.documentElement.lang = htmlLang;
-    document.title = t.meta.title;
-    document.querySelector('meta[name="description"]')?.setAttribute('content', t.meta.description);
-  }, [htmlLang, t]);
+    document.title = title ? `${title} · Milton Aguirre` : t.meta.title;
+    document.querySelector('meta[name="description"]')?.setAttribute('content', description ?? t.meta.description);
+  }, [htmlLang, t, title, description]);
 
   // Endereço "oficial" de cada página e idioma, para o Google indexar /es e /en separadamente
   useEffect(() => {
